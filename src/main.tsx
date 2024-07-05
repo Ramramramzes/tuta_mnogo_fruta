@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import './reset.css'
 import { Provider } from 'react-redux'
 import store from './store/store.ts'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
@@ -10,7 +11,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<General />} />
-      <Route path="err" element={<div>404 упс</div>} />
     </>
   )
 )

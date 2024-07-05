@@ -1,0 +1,15 @@
+:root{
+  --orange: #FC980F;
+  --orange-hover: #faac3e;
+  --default: #333333;
+}
+
+
+
+@font-face { 
+  font-family: "Amavik";
+  src: url(https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/amavickfont.eot) format("eot"), /* IE8+, знак ? позволяет обойти баг в обработчике значения src */
+       url(https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/amavickfont.woff) format("woff"), /* все современные браузеры, IE9+ */
+       url(https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/amavickfont.ttf) format("truetype"); /* все современные браузеры */
+}
+

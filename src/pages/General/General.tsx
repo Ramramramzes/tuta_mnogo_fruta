@@ -1,8 +1,8 @@
-import React from 'react';
-import styles from './general.css';
+import styles from './general.module.css';
+import { Header } from '../../components/Header';
 
 export function General() {
   return (
-    <>General</>
+    <><Header /></>
   );
 }

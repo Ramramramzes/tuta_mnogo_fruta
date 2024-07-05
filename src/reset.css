@@ -33,7 +33,14 @@ body {
 }
 ol, ul {
 	list-style: none;
+	padding: none;
+	margin: none;
 }
+
+ul{
+	text-decoration: none;
+}
+
 blockquote, q {
 	quotes: none;
 }
