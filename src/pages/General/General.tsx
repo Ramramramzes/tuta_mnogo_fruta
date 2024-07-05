@@ -3,6 +3,8 @@ import { Header } from '../../components/Header';
 
 export function General() {
   return (
-    <><Header /></>
+    <>
+      <Header />
+    </>
   );
 }

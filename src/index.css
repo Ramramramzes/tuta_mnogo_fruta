@@ -4,8 +4,6 @@
   --default: #333333;
 }
 
-
-
 @font-face { 
   font-family: "Amavik";
   src: url(https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/amavickfont.eot) format("eot"), /* IE8+, знак ? позволяет обойти баг в обработчике значения src */

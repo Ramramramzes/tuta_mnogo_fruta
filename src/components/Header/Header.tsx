@@ -1,6 +1,6 @@
 import styles from './header.module.css';
 import { useNavigate } from 'react-router-dom';
-import content from '../../content/header/header.json'
+import content from '../../content/Genearal/header/header.json'
 
 const menu = [
   { label: 'Каталог', href: '/catalog' },
@@ -12,7 +12,7 @@ const menu = [
 
 export function Header() {
   const navigate = useNavigate()
-  const clickHandler = (link: string) => {
+  const navHandler = (link: string) => {
     navigate(link)
   }
 
@@ -22,11 +22,11 @@ export function Header() {
       <ul className={styles.list}>
         {menu.map((el) => {
           return (
-            <li key={el.label} onClick={() => clickHandler(el.href)}>{el.label}</li>
+            <li key={el.label} onClick={() => navHandler(el.href)}>{el.label}</li>
           );
         })}
       </ul>
-      <p>basket 300p</p>
+      <p onClick={() => navHandler('/basket')}>basket 300p</p>
     </div>
   );
 }
