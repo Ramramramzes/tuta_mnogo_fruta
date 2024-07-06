@@ -11,3 +11,8 @@
        url(https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/amavickfont.ttf) format("truetype"); /* все современные браузеры */
 }
 
+
+.link{
+  color: inherit;
+  text-decoration: none;
+}

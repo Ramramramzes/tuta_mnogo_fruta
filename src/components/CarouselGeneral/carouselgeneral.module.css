@@ -1,0 +1,57 @@
+.sliderImg{
+  width: 100%;
+}
+
+.caruselItem{
+  height: 70vh;
+  background-position: bottom center;;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carouselCaption{
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--orange);
+}
+
+.filter{
+  width: inherit;
+  height: inherit;
+  background-color: white;
+  opacity: .7;
+}
+
+.caruselTitle{
+  font-family: "Amavik", sans-serif;
+  font-size: 50px;
+}
+
+.caruselDescription{
+  font-family: "Manrope";
+  font-size: 22px;
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.btnBlock{
+  display: flex;
+}
+
+.btn{
+  font-family: "Manrope";
+  font-size: 14px;
+  width: fit-content;
+  padding: 6px 12px;
+  border: 1px solid var(--orange);
+  border-radius: 6px;
+  transition: 200ms linear;
+}
+
+.btn:hover{
+  background-color: var(--orange);
+  color: white;
+}
