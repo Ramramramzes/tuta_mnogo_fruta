@@ -4,9 +4,6 @@
 
 .caruselItem{
   height: 70vh;
-  background-position: bottom center;;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .carouselCaption{
@@ -22,6 +19,10 @@
   height: inherit;
   background-color: white;
   opacity: .7;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
 }
 
 .caruselTitle{
@@ -54,4 +55,19 @@
 .btn:hover{
   background-color: var(--orange);
   color: white;
+}
+
+.img{
+  width: 100%;
+  animation: grow 35000ms ease;
+  filter:opacity(.3);
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.3);
+	}
 }
