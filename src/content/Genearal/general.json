@@ -15,5 +15,19 @@
       "description": "",
       "image": "https://tuta-mnogo-fruta.ru/wp-content/uploads/2024/07/sliced-fresh-exotic-healthy-fruits-scaled-e1683482069630-2.jpg"
     }
-  ]
+  ],
+  "additionalInfo": [
+    {
+      "link" : "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/Dostavka.png",
+      "to" : "/delivery"
+    },
+    {
+      "link" : "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/Podarok.png",
+      "to" : "/catalog"
+    },
+    {
+      "link" : "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/Skidka.png",
+      "to" : "/presents"
+    }
+  ] 
 }
