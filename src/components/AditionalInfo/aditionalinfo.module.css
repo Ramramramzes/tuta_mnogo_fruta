@@ -18,6 +18,6 @@
 
 .img:hover{
   transform: scale(1.01);
-  box-shadow: 4px 4px 8px 2px var(--orange);
+  box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, .15);
   transition: linear 200ms;
 }
