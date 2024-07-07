@@ -15,27 +15,42 @@
 
 .img{
   width: 90%;
-  border-radius: 30px;
+  border-radius: 20px;
   margin-bottom: 10px;
+  transition: 200ms linear;
 }
 
-.link{
+.img:hover{
+  transform: scale(1.015);
+  transition: 200ms linear;
+}
+
+.img:hover + .title{
+  color: var(--orange);
+  transition: 200ms linear;
+}
+
+.card{
   display: flex;
+  justify-content: center;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   width: 95%;
   border: 1px solid var(--orange);
-  border-radius: 30px;
-  padding: 10px 0px;
+  border-radius: 20px;
+  padding: 15px 0px;
 }
 
 .title{
   color: var(--gray);
   font-size: 20px;
   margin-bottom: 10px;
+  transition: 200ms linear;
 }
 
 .price{
+  display: block;
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 10px;

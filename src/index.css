@@ -3,6 +3,7 @@
   --orange-hover: #faac3e;
   --default: #333333;
   --gray: #6B7280;
+  --light: #FFECD2;
 }
 
 @font-face { 
@@ -15,4 +16,11 @@
 .link{
   color: inherit;
   text-decoration: none;
+}
+
+.title{
+  font-family: "Amavik", sans-serif;
+  color: var(--orange);
+  font-size: 30px;
+  margin: 2% 7%;
 }

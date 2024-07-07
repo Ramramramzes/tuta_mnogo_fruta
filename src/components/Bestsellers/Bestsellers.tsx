@@ -4,6 +4,7 @@ import { GeneralData } from '../../content/Iproducts';
 import { Link } from 'react-router-dom';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { AddToBasketBtn } from '../AddToBasketBtn';
 
 const responsive = {
   superLargeDesktop: {
@@ -41,12 +42,14 @@ export function Bestsellers() {
       pauseOnHover={false}>
       {products.pastila.map((el,index) => {
           return(
-            <Link key={`${el.images}_${index}`} className={`link ${styles.link}`} to={'/catalog'}>
-              <img src={el.images.main} alt="main" className={styles.img}/>
-              <h4 className={styles.title}>{el.name}</h4>
-              <span className={styles.price}>от <span className={styles.priceLined}>{el.price.less * 1.2}₽ </span>{el.price.less}₽</span>
-              <button>Добавить в корзину</button>
-            </Link>
+            <div key={`${el.images}_${index}`} className={styles.card}>
+              <Link className='link' to={'/catalog'}>
+                <img src={el.images.main} alt="main" className={styles.img}/>
+                <h4 className={styles.title}>{el.name}</h4>
+                <span className={styles.price}>от <span className={styles.priceLined}>{el.price.less * 1.2}₽ </span>{el.price.less}₽</span>
+              </Link>
+              <AddToBasketBtn id={el.id}/>
+            </div>
           )
         })}
       </Carousel>

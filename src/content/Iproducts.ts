@@ -4,6 +4,7 @@ export interface GeneralData {
 
 interface PastilaItem {
   name: string;
+  id: number;
   type: string;
   price: {
     less: number;

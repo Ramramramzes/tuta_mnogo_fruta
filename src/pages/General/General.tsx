@@ -9,6 +9,7 @@ export function General() {
       <Header />
       <CarouselGeneral />
       <AditionalInfo />
+      <h2 className='title'>Хиты продаж</h2>
       <Bestsellers />
     </>
   );

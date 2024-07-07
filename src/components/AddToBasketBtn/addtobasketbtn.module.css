@@ -1,0 +1,17 @@
+.btn{
+  width: 70%;
+  background-color: var(--light);
+  border: 1px solid var(--light);
+  border-radius: 6px;
+  padding: 6px 0px;
+  font-size: 14px;
+  transition:all 200ms linear;
+
+}
+
+.btn:hover{
+  background-color: white;
+  color: var(--orange);
+  border-color: var(--orange);
+  transition:all 200ms linear;
+}

@@ -56,4 +56,5 @@ table {
 
 body{
   font-family: "Manrope";
+	color: var(--default);
 }

@@ -7,9 +7,9 @@ export function AditionalInfo() {
 
   return (
     <div className={styles.aditionalinfo}>
-      {generalData.additionalInfo.map((el) => {
+      {generalData.additionalInfo.map((el,index) => {
         return(
-          <Link className={styles.link} to={el.to}>
+          <Link className={styles.link} to={el.to} key={index}>
             <img className={styles.img} src={el.link} alt="img" />
           </Link>
         )
