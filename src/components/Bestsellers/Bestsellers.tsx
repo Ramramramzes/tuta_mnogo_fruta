@@ -38,7 +38,7 @@ export function Bestsellers() {
       keyBoardControl={false}
       showDots={false}
       arrows={false}
-      >
+      pauseOnHover={false}>
       {products.pastila.map((el,index) => {
           return(
             <Link key={`${el.images}_${index}`} className={`link ${styles.link}`} to={'/catalog'}>
