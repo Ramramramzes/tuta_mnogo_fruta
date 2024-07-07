@@ -31,7 +31,6 @@
 }
 
 .caruselDescription{
-  font-family: "Manrope";
   font-size: 22px;
   display: block;
   margin-top: 5%;
@@ -43,7 +42,6 @@
 }
 
 .btn{
-  font-family: "Manrope";
   font-size: 14px;
   width: fit-content;
   padding: 6px 12px;

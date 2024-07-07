@@ -1,0 +1,50 @@
+.main{
+  display: flex;
+  justify-content: center;
+}
+
+.bestsellers{
+  width: 90%;
+}
+
+.cardName{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.img{
+  width: 90%;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  border: 1px solid var(--orange);
+  border-radius: 30px;
+  padding: 10px 0px;
+}
+
+.title{
+  color: var(--gray);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.price{
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.priceLined{
+  font-weight: 400;
+  text-decoration: line-through;
+  color: var(--gray);
+  display: inline-block;
+  margin: 0px 7px;
+}
