@@ -1,10 +1,10 @@
 import styles from './bestsellers.module.css';
 import data from '../../content/products.json'
-import { GeneralData } from '../../content/Iproducts';
 import { Link } from 'react-router-dom';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { AddToBasketBtn } from '../AddToBasketBtn';
+import { IProducts } from '../../content/Iproducts';
 
 const responsive = {
   superLargeDesktop: {
@@ -27,7 +27,7 @@ const responsive = {
 
 
 export function Bestsellers() {
-  const products:GeneralData = data;
+  const products:IProducts = data;
   
   return(
     <div className={styles.main}>
