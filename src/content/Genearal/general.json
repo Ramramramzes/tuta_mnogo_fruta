@@ -29,5 +29,27 @@
       "link" : "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/Skidka.png",
       "to" : "/presents"
     }
+  ],
+  "categories":[
+    {
+      "name": "Фрипсы",
+      "img": "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/20230530_130958-1536x2048.jpg",
+      "link" : ""
+    },
+    {
+      "name": "Пастила",
+      "img": "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/20230530_123832-1536x2048.jpg",
+      "link" : ""
+    },
+    {
+      "name": "Мясо",
+      "img": "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/20230531_160939-1536x2048.jpg",
+      "link" : ""
+    },
+    {
+      "name": "Наборы",
+      "img": "https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-26-at-16.15.25.jpeg",
+      "link" : ""
+    }
   ] 
 }

@@ -4,6 +4,7 @@ import { CarouselGeneral } from '../../components/CarouselGeneral';
 import { AditionalInfo } from '../../components/AditionalInfo';
 import { Bestsellers } from '../../components/Bestsellers';
 import { OurProductGeneral } from '../../components/OurProductGeneral';
+import { CategoriesGeneral } from '../../components/CategoriesGeneral';
 export function General() {
   return (
     <>
@@ -14,6 +15,8 @@ export function General() {
       <Bestsellers />
       <h2 className='title'>Наша пастила</h2>
       <OurProductGeneral />
+      <h2 className='title'>Категории</h2>
+      <CategoriesGeneral />
     </>
   );
 }
