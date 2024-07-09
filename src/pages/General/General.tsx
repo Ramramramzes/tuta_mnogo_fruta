@@ -6,6 +6,7 @@ import { Bestsellers } from '../../components/Bestsellers';
 import { OurProductGeneral } from '../../components/OurProductGeneral';
 import { CategoriesGeneral } from '../../components/CategoriesGeneral';
 import { SaleGeneral } from '../../components/SaleGeneral';
+import { Subscribe } from '../../components/Subscribe';
 export function General() {
   return (
     <>
@@ -19,6 +20,7 @@ export function General() {
       <h2 className='title'>Категории</h2>
       <CategoriesGeneral />
       <SaleGeneral />
+      <Subscribe />
     </>
   );
 }
