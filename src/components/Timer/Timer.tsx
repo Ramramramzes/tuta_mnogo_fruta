@@ -1,5 +1,5 @@
 import Countdown, { CountdownRenderProps } from 'react-countdown';
-import styles from './timer.module.css';
+import styles from './timer.module.scss';
 import { useState } from 'react';
 
 export function Timer({delay}:{delay:number}) {

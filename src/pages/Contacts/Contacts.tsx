@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './contacts.module.css';
 
 export function Contacts() {
   const navigate = useNavigate()

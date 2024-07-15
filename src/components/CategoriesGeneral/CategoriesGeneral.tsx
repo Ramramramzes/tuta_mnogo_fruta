@@ -1,4 +1,4 @@
-import styles from './categoriesgeneral.module.css';
+import styles from './categoriesgeneral.module.scss';
 import categoriesData from "../../content/Genearal/general.json"
 import { Link } from 'react-router-dom';
 import { IGeneralData } from '../../content/Genearal/Igeneral';

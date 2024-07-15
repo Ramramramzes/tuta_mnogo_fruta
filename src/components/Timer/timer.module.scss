@@ -1,0 +1,29 @@
+.timerBlock{
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  text-align: center;
+  margin-right: 5%;
+  .time{
+    background-color: var(--orange);
+    color: white;
+    font-size: 20px;
+    padding: 6px 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid white;
+  }
+  .downBlock{
+    display: flex;
+    font-size: 12px;
+    flex-direction: column;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #C77B14;
+    color: white;
+    padding-bottom: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}

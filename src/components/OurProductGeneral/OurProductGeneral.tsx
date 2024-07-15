@@ -1,4 +1,4 @@
-import styles from './ourproductgeneral.module.css';
+import styles from './ourproductgeneral.module.scss';
 
 export function OurProductGeneral() {
   return (

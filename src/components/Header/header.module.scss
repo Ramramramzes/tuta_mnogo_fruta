@@ -18,17 +18,16 @@
   display: flex;
   justify-content: space-between;
   width: 50%;
+  li{
+    transition: linear;
+    transition-duration: 200ms;
+    transform: scale(1);
+    &:hover{
+      transform: scale(1.1);
+      transition: linear;
+      transition-duration: 200ms;
+      color: var(--orange-hover);
+    }
+  }
 }
 
-.list li{
-  transition: linear;
-  transition-duration: 200ms;
-  transform: scale(1);
-}
-
-.list li:hover{
-  transform: scale(1.1);
-  transition: linear;
-  transition-duration: 200ms;
-  color: var(--orange-hover);
-}

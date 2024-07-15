@@ -1,4 +1,4 @@
-import styles from './salegeneral.module.css';
+import styles from './salegeneral.module.scss';
 import { Timer } from '../Timer';
 import { AddToBasketBtn } from '../AddToBasketBtn';
 import sellsData from '../../content/products.json';

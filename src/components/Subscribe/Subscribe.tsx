@@ -1,4 +1,4 @@
-import styles from './subscribe.module.css';
+import styles from './subscribe.module.scss';
 import plane from '../../svg/plane.svg'
 import mail from '../../svg/mail.svg'
 import { FormEvent, useState } from 'react';

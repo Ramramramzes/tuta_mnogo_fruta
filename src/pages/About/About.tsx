@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './about.module.css';
 
 export function About() {
   const navigate = useNavigate()

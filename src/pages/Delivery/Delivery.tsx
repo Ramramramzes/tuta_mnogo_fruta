@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './delivery.module.css';
 
 export function Delivery() {
   const navigate = useNavigate()
