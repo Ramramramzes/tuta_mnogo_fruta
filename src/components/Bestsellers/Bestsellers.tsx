@@ -25,7 +25,6 @@ const responsive = {
   }
 };
 
-
 export function Bestsellers() {
   const products:IProducts = data;
   
@@ -40,9 +39,10 @@ export function Bestsellers() {
       showDots={false}
       arrows={false}
       pauseOnHover={false}>
-      {products.pastila.map((el,index) => {
+      {products.products.map((el,index) => {
           return(
-            <div key={`${el.images}_${index}`} className={styles.card}>
+            el.bestsellers && (
+              <div key={`${el.images}_${index}`} className={styles.card}>
               <Link className='link' to={'/catalog'}>
                 <img src={el.images.main} alt="main" className={styles.img}/>
                 <h4 className={styles.title}>{el.name}</h4>
@@ -50,6 +50,7 @@ export function Bestsellers() {
               </Link>
               <AddToBasketBtn id={el.id}/>
             </div>
+            )
           )
         })}
       </Carousel>

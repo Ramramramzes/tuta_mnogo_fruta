@@ -1,4 +1,8 @@
+import styles from './catalog.module.scss'
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
+import { Sidebar } from '../../components/Sidebar';
 
 export function Catalog() {
   const navigate = useNavigate()
@@ -6,8 +10,12 @@ export function Catalog() {
     navigate(link)
   }
   return (
-    <>catalog
-      <button onClick={() => navHandler('/')}>back</button>
-    </>
+    <div className={styles.catalog}>
+      <Header />
+        <div className={styles.main}>
+          <Sidebar />
+        </div>
+      <Footer />
+    </div>
   );
 }

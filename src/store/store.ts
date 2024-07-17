@@ -1,7 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import basketReducer from './basket'
+import catalogReduсer from './catalog'
+
 const rootReducer = combineReducers({
   basket: basketReducer,
+  catalog: catalogReduсer, 
 })
 
 const store = configureStore({

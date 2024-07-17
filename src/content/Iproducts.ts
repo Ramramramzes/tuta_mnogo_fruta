@@ -1,10 +1,12 @@
 export interface IProducts {
-  pastila: PastilaItem[];
+  products: PastilaItem[];
 }
 
 interface PastilaItem {
   name: string;
   id: number;
+  catalog: string;
+  bestsellers: boolean;
   type: string;
   price: {
     less: number;
