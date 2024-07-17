@@ -7,6 +7,7 @@ import { OurProductGeneral } from '../../components/OurProductGeneral';
 import { CategoriesGeneral } from '../../components/CategoriesGeneral';
 import { SaleGeneral } from '../../components/SaleGeneral';
 import { Subscribe } from '../../components/Subscribe';
+import { Footer } from '../../components/Footer';
 export function General() {
   return (
     <>
@@ -21,6 +22,7 @@ export function General() {
       <CategoriesGeneral />
       <SaleGeneral />
       <Subscribe />
+      <Footer />
     </>
   );
 }

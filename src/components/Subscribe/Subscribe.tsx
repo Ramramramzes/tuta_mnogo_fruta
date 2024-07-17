@@ -28,8 +28,16 @@ export function Subscribe() {
           будь в курсе всех <span className={styles.title}>акций</span>
         </h2>
         <form className={styles.form} onSubmit={formSend}>
-          <input type="email" name="email" value={email} onChange={(e) => changeMail(e)} className={styles.inpt}/>
-          <input type="submit" value="Отправить" className={styles.btn}/>
+          <input type="email" name="email" 
+          value={email}
+          onChange={(e) => changeMail(e)}
+          className={styles.inpt}
+          placeholder='Email'/>
+          <input
+          type="submit"
+          value="Отправить"
+          disabled={email.trim() === '' ? true : false}
+          className={styles.btn}/>
         </form>
       </div>
     </div>

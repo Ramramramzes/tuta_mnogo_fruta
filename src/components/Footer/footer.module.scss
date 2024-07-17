@@ -1,0 +1,98 @@
+.footer{
+  display: flex;
+  flex-direction: column;
+  background: 
+      url('https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/Apelsinki.png') center/cover no-repeat,
+      #FFB754;
+  .main{
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    padding: 13% 0%;
+    
+    justify-content: space-around;
+    align-items: center;
+    .logo{
+      width: 20%;
+      cursor: pointer;
+    }
+    .list{
+      width: 15%;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-family: "Amavik",sans-serif;
+      font-size: 20px;
+      color: var(--choco);
+      li{
+        cursor: pointer;
+        transition: 200ms linear;
+        &:hover{
+          transform: scale(1.1);
+          transition: 200ms linear;
+        }
+      }
+    }
+    .contacts{
+      display: flex;
+      height: inherit;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      .icons{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        img{
+          width: 25%;
+          cursor: pointer;
+          transition: 200ms linear;
+          &:hover{
+            transform: scale(1.1);
+            transition: 200ms linear;
+          }
+        }
+      }
+      .call{
+        display: block;
+        text-align: center;
+        height: 50px;
+        line-height: 1.5;
+      }
+      .contactLinks{
+        font-family: "Amavik",sans-serif;
+        color: var(--choco);
+        font-size: 22px;
+        font-weight: 200;
+        transition: 200ms linear;
+        &:hover{
+          transform: scale(1.1);
+          transition: 200ms linear;
+        }
+      }
+  
+    }
+    .ditales{
+      width: 15%;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: end;
+      text-align: right;;
+      img{
+        width: 90%;
+      }
+    }
+  }
+  .documents{
+    width: 100%;
+    padding: 0px 5%;
+    padding-bottom: .6%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+}

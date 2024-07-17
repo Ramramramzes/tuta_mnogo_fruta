@@ -1,8 +1,8 @@
 import styles from './header.module.scss';
 import { useNavigate } from 'react-router-dom';
-import content from '../../content/Genearal/header/header.json'
+import content from '../../content/Genearal/static/header.json'
 
-const menu = [
+export const menu = [
   { label: 'Каталог', href: '/catalog' },
   { label: 'Подарки', href: '/presents' },
   { label: 'О нас', href: '/about' },
