@@ -14,6 +14,8 @@ export const catalogSlice = createSlice({
   reducers: {
     setCurrentCatalog: (state, action) => {
       state.currentCatalog = action.payload;
+      console.log(state.currentCatalog);
+      
     }
   },
 })
