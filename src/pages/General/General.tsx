@@ -1,4 +1,3 @@
-import styles from './general.module.scss';
 import { Header } from '../../components/Header';
 import { CarouselGeneral } from '../../components/CarouselGeneral';
 import { AditionalInfo } from '../../components/AditionalInfo';

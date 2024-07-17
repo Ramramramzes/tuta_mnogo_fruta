@@ -1,12 +1,12 @@
 import styles from './salegeneral.module.scss';
 import { Timer } from '../Timer';
 import { AddToBasketBtn } from '../AddToBasketBtn';
-import sellsData from '../../content/products.json';
-import { IProducts } from '../../content/Iproducts';
+import sellsData from '../../content/sells.json';
+import { ISells } from '../../content/ISells';
 
 
 export function SaleGeneral() {
-  const data:IProducts = sellsData;
+  const data:ISells = sellsData;
 
   return (
     <div className={styles.saleGeneral}>

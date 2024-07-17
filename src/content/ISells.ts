@@ -1,5 +1,5 @@
-export interface IProducts {
-  pastila: PastilaItem[];
+export interface ISells {
+  sells: PastilaItem;
 }
 
 interface PastilaItem {
