@@ -1,4 +1,4 @@
-import styles from './addtobasketbtn.module.css';
+import styles from './addtobasketbtn.module.scss';
 
 export function AddToBasketBtn({id}:{id:number}) {
   return (

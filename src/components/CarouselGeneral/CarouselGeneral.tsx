@@ -1,4 +1,4 @@
-import styles from './carouselgeneral.module.css';
+import styles from './carouselgeneral.module.scss';
 import Carousel from 'react-bootstrap/Carousel';
 import slidesData from '../../content/Genearal/general.json'
 import { IGeneralData } from '../../content/Genearal/Igeneral';

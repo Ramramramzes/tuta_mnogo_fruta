@@ -1,4 +1,4 @@
-import styles from './aditionalinfo.module.css';
+import styles from './aditionalinfo.module.scss';
 import data from '../../content/Genearal/general.json'
 import { IGeneralData } from '../../content/Genearal/Igeneral';
 import { Link } from 'react-router-dom';
