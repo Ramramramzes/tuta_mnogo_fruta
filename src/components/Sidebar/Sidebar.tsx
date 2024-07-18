@@ -1,6 +1,6 @@
+import styles from './sidebar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
-import styles from './sidebar.module.scss';
 import { frips, kit, meat, pastila, presents } from '../../svg/catalogSvg';
 import { setCurrentCatalog } from '../../store/catalog';
 
@@ -43,11 +43,16 @@ export function Sidebar() {
 
   return (
     <div className={styles.sidebar}>
-      <ul>
+      <ul className={styles.list}>
         {CatalogMenu.map((el,index) =>{
           return (
-            <li  key={index} onClick={el.handler}>
-              {el.svg}{el.name}
+            <li  key={index} onClick={el.handler} className={styles.listItem} style={el.name === CatalogState.currentCatalog ? {
+              backgroundColor: 'var(--light)',
+              padding:'5px 10px',
+              borderRadius: '5px',
+              transform:'scale(1.1)',
+            } : {}}>
+              <span className={styles.menuIcon}>{el.svg}</span>{el.name}
             </li>
           );
         })}

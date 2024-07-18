@@ -1,0 +1,26 @@
+.sidebar{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  padding: 2% 0%;
+  border-right: 1px solid var(--orange);
+  .list{
+    width: 60%;
+    font-size: 20px;
+    color: var(--orange);
+    .listItem{
+      cursor: pointer;
+      transition: 200ms linear;
+      &:not(:first-child){
+        margin-top: 10%;
+      }
+      &:hover{
+        color: var(--orange-hover);
+        transform: scale(1.05);
+      }
+      .menuIcon{
+        margin-right: 3%;
+      }
+    }
+  }
+}
