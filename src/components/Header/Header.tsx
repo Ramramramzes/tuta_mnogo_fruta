@@ -14,8 +14,8 @@ export const menu = [
 ];
 
 export function Header() {
-  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate()
+  const dispatch = useDispatch<AppDispatch>();
   const navHandler = (link: string) => {
     if(link === '/catalog'){
       dispatch(setCurrentCatalog(''));

@@ -5,10 +5,20 @@ import content from '../../content/Genearal/static/footer.json'
 import inst from '../../svg/inst.svg'
 import tg from '../../svg/tg.svg'
 import whats from '../../svg/whats.svg'
+import { setCurrentCatalog } from '../../store/catalog';
+import { AppDispatch } from '../../store/store';
+import { useDispatch } from 'react-redux';
 
 export function Footer() {
   const navigate = useNavigate()
+  const dispatch = useDispatch<AppDispatch>();
   const navHandler = (link: string) => {
+    if(link === '/catalog'){
+      dispatch(setCurrentCatalog(''));
+    }
+    if(link === '/presents'){
+      dispatch(setCurrentCatalog('Подарки'));
+    }
     navigate(link)
   }
   return (
