@@ -7,8 +7,17 @@ const port = 3001;
 app.use(express.json());
 
 app.get('/products', (req, res) => {
-  const {curPage, itemsPerPage} = req.query;
-  res.send(data.products.slice(curPage - 1, itemsPerPage));
+  const itemsPerPage = 6
+  const curPage= req.query.page
+  const startIndex = (curPage - 1) * itemsPerPage;
+  const endIndex = startIndex + parseInt(itemsPerPage);
+  let filtered
+  if(req.query.catalog != ''){
+    filtered = data.products.filter(el => el.catalog === req.query.catalog);
+  }else{
+    filtered = data.products;
+  }
+  res.send(filtered.slice(startIndex,endIndex));
 });
 
 app.listen(port, () => {

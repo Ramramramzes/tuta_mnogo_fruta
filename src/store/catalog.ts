@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface ICatogInitial{
   currentCatalog: string;
+  page:number;
 }
 
 const initialState:ICatogInitial = {
   currentCatalog: '',
+  page: 1,
+
 }
 
 export const catalogSlice = createSlice({
@@ -14,11 +17,12 @@ export const catalogSlice = createSlice({
   reducers: {
     setCurrentCatalog: (state, action) => {
       state.currentCatalog = action.payload;
-      console.log(state.currentCatalog);
-      
-    }
+    },
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
   },
 })
 
-export const { setCurrentCatalog } = catalogSlice.actions;
+export const { setCurrentCatalog, setPage } = catalogSlice.actions;
 export default catalogSlice.reducer;

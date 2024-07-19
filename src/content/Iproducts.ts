@@ -2,7 +2,7 @@ export interface IProducts {
   products: PastilaItem[];
 }
 
-interface PastilaItem {
+export interface PastilaItem {
   name: string;
   id: number;
   catalog: string;
