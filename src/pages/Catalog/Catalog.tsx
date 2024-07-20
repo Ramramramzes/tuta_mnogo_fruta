@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { useEffect, useState } from 'react';
 import { setPage } from '../../store/catalog';
+import { Paginate } from '../../components/Paginate';
 
 export function Catalog() {
   const navigate = useNavigate()
@@ -49,12 +50,7 @@ export function Catalog() {
               })}
             </div>
             <div className={styles.pagination}>
-              {pagination.map((el,index) => {
-                return <span className={styles.pagination} onClick={() => {
-                  dispatch(setPage(el))
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }} key={index}>{el.toString()}</span>
-              })}
+              <Paginate />
             </div>
           </div>
         </div>
