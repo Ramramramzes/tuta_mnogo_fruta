@@ -12,7 +12,8 @@ const port = 3001;
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'dist')));
+const distPath = path.resolve(__dirname, '../../dist');
+app.use(express.static(distPath));
 
 app.get('/products', (req, res) => {
   const itemsPerPage = 6;
