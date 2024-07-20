@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './howwework.module.scss';
 
 type HowState = 'Свежие продукты' | 'Упаковка' | 'Доставка';

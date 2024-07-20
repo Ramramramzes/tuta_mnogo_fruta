@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { PastilaItem } from "../content/IProducts";
 import { AppDispatch, RootState } from "../store/store";
 import { useDispatch, useSelector } from "react-redux";
-import { setPage, setPagesLimit } from "../store/catalog";
+import { setPagesLimit } from "../store/catalog";
 
 
 export const useProducts = () => {

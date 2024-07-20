@@ -1,7 +1,7 @@
 import styles from './catalog.module.scss'
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '../../components/Sidebar';
 import { useProducts } from '../../hooks/useProducts';
 import { CatalogCard } from '../../components/CatalogCard';
@@ -9,11 +9,11 @@ import { Paginate } from '../../components/Paginate';
 import { motion } from 'framer-motion';
 
 export function Catalog() {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   
-  const navHandler = (link: string) => {
-    navigate(link)
-  }
+  // const navHandler = (link: string) => {
+  //   navigate(link)
+  // }
 
   const products = useProducts();
   
