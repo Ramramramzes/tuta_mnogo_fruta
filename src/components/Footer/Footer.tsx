@@ -21,6 +21,9 @@ export function Footer() {
       dispatch(setCurrentCatalog('Подарки'));
       dispatch(setPage(1));
     }
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
     navigate(link)
   }
   return (

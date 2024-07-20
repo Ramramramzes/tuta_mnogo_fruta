@@ -3,6 +3,7 @@
     border-top: 1px solid var(--orange);
     background-color: var(--light);
     display: flex;
+    height: fit-content !important;
     .contentBlock{
       width: 85%;
       .catalogItems{

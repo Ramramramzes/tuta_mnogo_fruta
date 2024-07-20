@@ -6,6 +6,7 @@ import { Sidebar } from '../../components/Sidebar';
 import { useProducts } from '../../hooks/useProducts';
 import { CatalogCard } from '../../components/CatalogCard';
 import { Paginate } from '../../components/Paginate';
+import { motion } from 'framer-motion';
 
 export function Catalog() {
   const navigate = useNavigate()
@@ -18,9 +19,14 @@ export function Catalog() {
   
   
   return (
-    <div className={styles.catalog}>
+    <div
+    className={styles.catalog}>
       <Header />
-        <div className={styles.main} style={products ? {height: '100vh'} : {}}>
+        <motion.div
+        initial={{ scale: 0.97 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.4 }}
+        className={styles.main} style={products ? {height: '100vh'} : {}}>
           <Sidebar />
           <div className={styles.contentBlock}>
             <div className={styles.catalogItems}>
@@ -34,7 +40,7 @@ export function Catalog() {
               <Paginate />
             </div>
           </div>
-        </div>
+        </motion.div>
       <Footer />
     </div>
   );
