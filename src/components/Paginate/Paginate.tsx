@@ -11,7 +11,9 @@ export function Paginate() {
 
   const handlePageClick = (selectedItem: { selected: number }) => {
     dispatch(setPage(Number(selectedItem.selected+1)));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   };
 
   return (
