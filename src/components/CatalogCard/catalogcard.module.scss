@@ -1,0 +1,57 @@
+.card{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  text-align: center;
+  margin: 2% 0%;
+  padding: 2%;
+  height: 80vh;
+  justify-content: space-around;
+  border-radius: 20px;
+  animation: appearance 200ms linear;
+  .img{
+    width: 95%;
+    border-radius: 20px;
+  }
+  .text{
+    .title{
+      font-size: 20px;
+      color: var(--gray);
+    }
+    .price{
+      display: block;
+      margin: 3% 0%;
+      font-size: 26px;
+      font-weight: 600;
+      .priceLess{
+        color: var(--gray);
+        font-size: 22px;
+        font-weight: 300;
+        text-decoration: line-through;
+      }
+    }
+    .description{
+
+      font-size: 16px;
+      line-height: 1;
+      color: var(--gray);
+    }
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 1;
+    scale: 0;
+  }
+  30% {
+    opacity: 0.3;
+    scale: 1.2;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

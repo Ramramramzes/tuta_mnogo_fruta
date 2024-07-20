@@ -1,7 +1,7 @@
 import styles from './header.module.scss';
 import { useNavigate } from 'react-router-dom';
 import content from '../../content/Genearal/static/header.json'
-import { setCurrentCatalog } from '../../store/catalog';
+import { setCurrentCatalog, setPage } from '../../store/catalog';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 
@@ -19,9 +19,11 @@ export function Header() {
   const navHandler = (link: string) => {
     if(link === '/catalog'){
       dispatch(setCurrentCatalog(''));
+      dispatch(setPage(1));
     }
     if(link === '/presents'){
       dispatch(setCurrentCatalog('Подарки'));
+      dispatch(setPage(1));
     }
     navigate(link)
   }

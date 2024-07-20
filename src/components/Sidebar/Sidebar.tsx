@@ -2,7 +2,7 @@ import styles from './sidebar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { frips, kit, meat, pastila, presents } from '../../svg/catalogSvg';
-import { setCurrentCatalog } from '../../store/catalog';
+import { setCurrentCatalog, setPage } from '../../store/catalog';
 
 
 export function Sidebar() {
@@ -17,27 +17,27 @@ export function Sidebar() {
     {
       name: 'Фрипсы',
       svg: frips(),
-      handler: () => (handleCategoryClick('Фрипсы')),
+      handler: () => (handleCategoryClick('Фрипсы'),dispatch(setPage(1))),
     },
     {
       name: 'Пастила',
       svg: pastila(),
-      handler: () => handleCategoryClick('Пастила'),
+      handler: () => (handleCategoryClick('Пастила'),dispatch(setPage(1))),
     },
     {
       name: 'Мясо',
       svg: meat(),
-      handler: () => handleCategoryClick('Мясо'),
+      handler: () => (handleCategoryClick('Мясо'),dispatch(setPage(1))),
     },
     {
       name: 'Наборы',
       svg: kit(),
-      handler: () => handleCategoryClick('Наборы'),
+      handler: () => (handleCategoryClick('Наборы'),dispatch(setPage(1))),
     },
     {
       name: 'Подарки',
       svg: presents(),
-      handler: () => handleCategoryClick('Подарки'),
+      handler: () => (handleCategoryClick('Подарки'),dispatch(setPage(1))),
     },
   ];
 

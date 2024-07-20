@@ -11,13 +11,16 @@ app.get('/products', (req, res) => {
   const curPage= req.query.page
   const startIndex = (curPage - 1) * itemsPerPage;
   const endIndex = startIndex + parseInt(itemsPerPage);
-  let filtered
+  let filtered, howManyPages
   if(req.query.catalog != ''){
     filtered = data.products.filter(el => el.catalog === req.query.catalog);
+    howManyPages = Math.ceil(Number(filtered.length) / itemsPerPage);
   }else{
     filtered = data.products;
+    howManyPages = Math.ceil(Number(filtered.length) / itemsPerPage);
   }
-  res.send(filtered.slice(startIndex,endIndex));
+  const arr = filtered.slice(startIndex,endIndex)
+  res.send({arr: arr,howManyPages:howManyPages});
 });
 
 app.listen(port, () => {
