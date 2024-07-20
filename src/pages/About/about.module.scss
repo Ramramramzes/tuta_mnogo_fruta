@@ -1,0 +1,45 @@
+.main{
+  background-image: url('https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/fon_o.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 130%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 300;
+  .logo{
+    width: 30%;
+    margin-bottom: 1%;
+  }
+
+  .text_l{
+    width: 70%;
+  }
+
+  .text_m{
+    width: 60%;
+  }
+
+  .text_s{
+    width: 48%;
+    display: block;
+    margin-bottom: 10%;
+  }
+
+  .certificate{
+    width: 50%;
+    margin-bottom: 10%;
+    .color{
+      color: var(--orange);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .main{
+    background-size: 140%;
+  }
+}

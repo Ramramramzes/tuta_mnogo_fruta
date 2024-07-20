@@ -1,0 +1,44 @@
+.tabs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .btns{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 20px;
+    color: var(--orange);
+    margin-bottom: 3%;
+    span{
+      background-color: var(--light);
+      padding: 1% 7%;
+      border-radius: 10px;
+      transition: 200ms;
+      cursor: pointer;
+      &:hover{
+        background-color: var(--light-back);
+        color: white;
+        transition: 200ms;
+      }
+    }
+  }
+  .tabsContent{
+    width: 90%;
+    display: flex;
+    margin-bottom: 3%;
+    justify-content: space-around;
+    align-items: center;
+    .img{
+      width: 20%;
+      height: 45vh;
+      border-radius: 20px;
+    }
+    .text{
+      width: 40%;
+      text-align: center;
+      line-height: 2;
+    }
+  }
+}
+
+

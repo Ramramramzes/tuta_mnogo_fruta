@@ -1,3 +1,4 @@
+import styles from './general.module.scss'
 import { Header } from '../../components/Header';
 import { CarouselGeneral } from '../../components/CarouselGeneral';
 import { AditionalInfo } from '../../components/AditionalInfo';
@@ -9,7 +10,7 @@ import { Subscribe } from '../../components/Subscribe';
 import { Footer } from '../../components/Footer';
 export function General() {
   return (
-    <>
+    <div className={styles.main}>
       <Header />
       <CarouselGeneral />
       <AditionalInfo />
@@ -22,6 +23,6 @@ export function General() {
       <SaleGeneral />
       <Subscribe />
       <Footer />
-    </>
+    </div>
   );
 }
