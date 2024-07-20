@@ -1,6 +1,6 @@
 import express from 'express'; 
 import path from 'path';
-import data from '../content/products.json' assert { type: 'json' };
+import data from '../src/content/products.json' assert { type: 'json' };
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -13,6 +13,8 @@ const port = 3001;
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'dist')));
+console.log(__dirname);
+
 
 app.get('/products', (req, res) => {
   const itemsPerPage = 6;

@@ -26,7 +26,7 @@ export function Catalog() {
         initial={{ scale: 0.97 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.4 }}
-        className={styles.main} style={products ? {height: '100vh'} : {}}>
+        className={styles.main} style={products.length === 0 ? {height: '100vh'} : {}}>
           <Sidebar />
           <div className={styles.contentBlock}>
             <div className={styles.catalogItems}>
