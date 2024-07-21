@@ -9,7 +9,7 @@ export const menu = [
   { label: 'Каталог', href: '/catalog' },
   { label: 'Подарки', href: '/presents' },
   { label: 'О нас', href: '/about' },
-  { label: 'Доставка', href: '/delivery' },
+  { label: 'Доставка и оплата', href: '/delivery' },
   { label: 'Контакты', href: '/contacts' },
 ];
 

@@ -1,13 +1,14 @@
-import { useNavigate } from 'react-router-dom';
+import { DeliveryContent } from '../../components/DeliveryContent';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 export function Delivery() {
-  const navigate = useNavigate()
-  const navHandler = (link: string) => {
-    navigate(link)
-  }
+
   return (
-    <>delivery
-    <button onClick={() => navHandler('/')}>back</button>
+    <>
+      <Header />
+      <DeliveryContent />
+      <Footer />
     </>
   );
 }
