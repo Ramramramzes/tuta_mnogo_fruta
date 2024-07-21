@@ -16,19 +16,20 @@ export function Catalog() {
   // }
 
   const products = useProducts();
+  // const products = [];
   
   
   return (
     <div
     className={styles.catalog}>
       <Header />
-        <motion.div
+      <motion.div
         initial={{ scale: 0.97 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.4 }}
         className={styles.main} style={products.length === 0 ? {height: '100vh'} : {}}>
           <Sidebar />
-          <div className={styles.contentBlock}>
+          {products.length > 0 ? <div className={styles.contentBlock}>
             <div className={styles.catalogItems}>
               {products && products.map((el) => {
                 return (
@@ -39,7 +40,7 @@ export function Catalog() {
             <div className={styles.pagination}>
               <Paginate />
             </div>
-          </div>
+          </div> : <div className='loader-block'><span className='loader'></span></div>}
         </motion.div>
       <Footer />
     </div>

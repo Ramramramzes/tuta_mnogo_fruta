@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import { ContactsContent } from '../../components/ContactsContent';
 
 export function Contacts() {
   const navigate = useNavigate()
@@ -6,8 +9,10 @@ export function Contacts() {
     navigate(link)
   }
   return (
-    <>contacts
-    <button onClick={() => navHandler('/')}>back</button>
+    <>
+      <Header />
+      <ContactsContent />
+      <Footer />
     </>
   );
 }

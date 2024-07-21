@@ -9,7 +9,7 @@ export function About() {
     <>
       <Header />
         <motion.div
-        initial={{ scale: 1.1 }}
+        initial={{ scale: .97 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.4 }} >
           <div className={styles.main}>
