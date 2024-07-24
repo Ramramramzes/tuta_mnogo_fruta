@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 export function DeliveryContent() {
   return (
     <motion.div
-      initial={{ scale: 0.97 }}
-      animate={{ scale: 1 }}
+      initial={{ scale: 0.97, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.4 }}
       className={styles.main + ' container'} 
     >

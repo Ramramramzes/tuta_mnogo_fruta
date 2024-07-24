@@ -15,8 +15,8 @@ export function Catalog() {
     className={styles.catalog}>
       <Header />
       <motion.div
-        initial={{ scale: 0.97 }}
-        animate={{ scale: 1 }}
+        initial={{ scale: 0.97, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }}
         className={styles.main} style={products.loading ? {height: '100vh'} : {}}>
           <Sidebar />

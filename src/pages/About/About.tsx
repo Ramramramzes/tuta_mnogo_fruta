@@ -9,8 +9,8 @@ export function About() {
     <>
       <Header />
         <motion.div
-        initial={{ scale: .97 }}
-        animate={{ scale: 1 }}
+        initial={{ scale: .97, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }} >
           <div className={styles.main}>
             <img className={styles.logo} src="https://tuta-mnogo-fruta.ru/wp-content/uploads/2023/04/Logo_o-768x104.png" alt="logo" />
