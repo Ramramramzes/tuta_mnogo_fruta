@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { AddToBasketBtn } from '../AddToBasketBtn';
-import { IProducts, PastilaItem } from '../../content/IProducts';
 
 const responsive = {
   superLargeDesktop: {
@@ -24,6 +23,36 @@ const responsive = {
     items: 1
   }
 };
+
+interface IProducts {
+  products: PastilaItem[];
+}
+
+interface PastilaItem {
+  name: string;
+  id: number;
+  catalog: string;
+  bestsellers: boolean;
+  type: string;
+  price: {
+    less: number;
+    more: number;
+  };
+  status: string;
+  images: {
+    main: string;
+    all: string[];
+  };
+  compound: string;
+  bju: {
+    b: number;
+    j: number;
+    u: number;
+    kkal: number;
+  };
+  description: string;
+  fresh: string;
+}
 
 export function Bestsellers() {
   const products: IProducts = data;
