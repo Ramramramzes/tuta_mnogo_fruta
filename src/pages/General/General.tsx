@@ -8,7 +8,10 @@ import { SaleGeneral } from '../../components/SaleGeneral';
 import { Subscribe } from '../../components/Subscribe';
 import { Footer } from '../../components/Footer';
 import { motion } from 'framer-motion';
+import { useWp } from '../../hooks/useWp';
 export function General() {
+  useWp();
+  
   return (
     <div>
       <Header />

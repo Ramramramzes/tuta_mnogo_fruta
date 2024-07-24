@@ -25,14 +25,27 @@ app.get('/products', (req, res) => {
 
   const startIndex = (curPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
+  let arr = [];
+  let howManyPages = 0;
 
-  let filtered = data.products;
-  if (req.query.catalog && req.query.catalog !== '') {
-    filtered = filtered.filter(el => el.catalog === req.query.catalog);
+  if(req.query.products){
+      // let filtered = data.products;
+    let filtered = req.query.products;
+
+    console.log(filtered);
+    if (req.query.catalog && req.query.catalog !== '') {
+      filtered = filtered.filter((el) => {
+        return el.categories.some(category => category.name === req.query.catalog);
+      });
+    }
+
+    console.log(filtered);
+    
+    howManyPages = Math.ceil(filtered.length / itemsPerPage);
+    arr = filtered.slice(startIndex, endIndex);
+  }else{
+    arr = [];
   }
-
-  const howManyPages = Math.ceil(filtered.length / itemsPerPage);
-  const arr = filtered.slice(startIndex, endIndex);
 
   res.send({ arr: arr, howManyPages: howManyPages });
 });
