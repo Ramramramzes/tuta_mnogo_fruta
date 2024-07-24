@@ -24,40 +24,6 @@ const responsive = {
   }
 };
 
-export function Bestsellers() {
-  const products:IProducts = data;
-  
-  return(
-    <div className={styles.main}>
-      <Carousel className={styles.bestsellers}
-      responsive={responsive}
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={5000}
-      keyBoardControl={false}
-      showDots={false}
-      arrows={false}
-      pauseOnHover={false}>
-      {products.products.map((el,index:number) => {
-          return(
-            el.bestsellers && (
-              <div key={`${el.images}_${index}`} className={styles.card}>
-              <Link className='link' to={'/catalog'}>
-                <img src={el.images.main} alt="main" className={styles.img}/>
-                <h4 className={styles.title}>{el.name}</h4>
-                <span className={styles.price}>от <span className={styles.priceLined}>{el.price.less * 1.2}₽ </span>{el.price.less}₽</span>
-              </Link>
-              <AddToBasketBtn id={el.id}/>
-            </div>
-            )
-          )
-        })}
-      </Carousel>
-    </div>
-  );
-}
-
-
 interface IProducts {
   products: PastilaItem[];
 }
@@ -86,4 +52,37 @@ interface PastilaItem {
   };
   description: string;
   fresh: string;
+}
+
+export function Bestsellers() {
+  const products: IProducts = data;
+
+  return (
+    <div className={styles.main}>
+      <Carousel className={styles.bestsellers}
+        responsive={responsive}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={5000}
+        keyBoardControl={false}
+        showDots={false}
+        arrows={false}
+        pauseOnHover={false}>
+        {products.products.map((el: PastilaItem, index: number) => {
+          return (
+            el.bestsellers && (
+              <div key={`${el.images.main}_${index}`} className={styles.card}>
+                <Link className='link' to={'/catalog'}>
+                  <img src={el.images.main} alt="main" className={styles.img} />
+                  <h4 className={styles.title}>{el.name}</h4>
+                  <span className={styles.price}>от <span className={styles.priceLined}>{el.price.less * 1.2}₽ </span>{el.price.less}₽</span>
+                </Link>
+                <AddToBasketBtn id={el.id} />
+              </div>
+            )
+          )
+        })}
+      </Carousel>
+    </div>
+  );
 }
