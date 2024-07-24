@@ -14,6 +14,9 @@ export function AditionalInfo() {
       {generalData.additionalInfo.map((el,index) => {
         return(
           <Link className={styles.link} to={el.to} key={index} onClick={() => {
+            setTimeout(() => {
+              window.scrollTo(0, 0);
+            }, 100)
             if (el.to === '/catalog'){
               dispatch(setCurrentCatalog('Наборы'));
             }
