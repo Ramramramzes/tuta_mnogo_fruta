@@ -1,4 +1,4 @@
-import styles from './itemelement.module.scss';
+// import styles from './itemelement.module.scss';
 import { ItemImage } from '../ItemImage';
 
 export function ItemElement() {
