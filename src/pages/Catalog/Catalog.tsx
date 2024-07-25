@@ -9,7 +9,6 @@ import { useWp } from '../../hooks/useWp';
 
 export function Catalog() {
   const products = useWp();
-  
   return (
     <div
     className={styles.catalog}>
@@ -24,7 +23,7 @@ export function Catalog() {
                                 <div className={styles.catalogItems}>
                                   {products && products.products.map((el) => {
                                     return (
-                                      <CatalogCard key={el.id + Math.random()} el={el} />
+                                      <CatalogCard key={el.id} el={el} />
                                     )
                                   })}
                                 </div>
