@@ -17,6 +17,12 @@ export function ItemImage({itemData}:{itemData:{item:ProductVariation[],loading:
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
+    //? Сброс при ререндере
+    dispatch(setCurrentItem(''));
+    dispatch(setCurrentPrices(itemData.item));
+  },[]);
+
+  useEffect(() => {
     if(itemData && itemData.item.length > 0) { 
       CatalogState.allProducts.find((el:IProductWp) => {
         if(el.id === itemData.item[0].parent_id){
