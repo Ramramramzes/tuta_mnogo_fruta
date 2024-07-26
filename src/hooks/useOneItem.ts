@@ -66,7 +66,7 @@ interface Links {
   up: { href: string }[];
 }
 
-interface ProductVariation {
+export interface ProductVariation {
   _links: Links;
   attributes: Attribute[];
   backordered: boolean;

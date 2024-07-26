@@ -1,13 +1,16 @@
 import styles from './itemimage.module.scss';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { ImageOne, useOneItem } from '../../hooks/useOneItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { ImageOne, ProductVariation } from '../../hooks/useOneItem';
 import { IProductWp } from '../../hooks/useWp';
+import { setCurrentItem, setCurrentPrices } from '../../store/item';
+import { motion } from 'framer-motion';
 
-export function ItemImage() {
+
+export function ItemImage({itemData}:{itemData:{item:ProductVariation[],loading:boolean,error:string}}){
   const CatalogState = useSelector((state: RootState) => state.catalog);
-  const itemData = useOneItem();
+  const dispatch = useDispatch<AppDispatch>();
   const [backgroundPosition, setBackgroundPosition] = useState('0% 0%');
   const [itemImages,setImages] = useState<ImageOne[]>([])
   const [imgIndex, setImgIndex] = useState(0);
@@ -17,6 +20,8 @@ export function ItemImage() {
     if(itemData && itemData.item.length > 0) { 
       CatalogState.allProducts.find((el:IProductWp) => {
         if(el.id === itemData.item[0].parent_id){
+          dispatch(setCurrentItem(el));
+          dispatch(setCurrentPrices(itemData.item));
           setImages(el.images);
         }
       })
@@ -39,18 +44,25 @@ export function ItemImage() {
   }
 
   return (
-    <div>
-      <div className={styles.main} onMouseMove={handleMouseMove}>
-          <div className={styles.imgBlock} style={{opacity: opacity}}>
+    <>
+      {itemImages.length > 0 ?
+        <motion.div
+        initial={{ scale: 0.97, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        className={styles.main}
+        onMouseMove={handleMouseMove}
+      >
+      <div className={styles.imgBlock} style={{opacity: opacity}}>
             <img
               className={styles.mainImg}
-              src={itemImages.length > 0 ?itemImages[imgIndex].src : ''}
+              src={itemImages[imgIndex].src}
               alt=""
             />
             <div
               className={styles.magnifierContainer}
               style={{
-                backgroundImage: `url(${itemImages.length > 0 ?itemImages[imgIndex].src : ''})`,
+                backgroundImage: `url(${itemImages[imgIndex].src})`,
                 backgroundPosition: backgroundPosition,
               }}
             ></div>
@@ -67,7 +79,9 @@ export function ItemImage() {
             ></div>
           ))}
         </div>
-      </div>
-    </div>
+    </motion.div>
+    :<div style={{height:'100vh'}}></div>
+      }
+    </>
   );
 }
