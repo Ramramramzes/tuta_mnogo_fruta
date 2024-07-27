@@ -1,4 +1,9 @@
 .pageContent{
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  .mainPart{
+    display: flex;
+    justify-content: space-around;
+  }
 }

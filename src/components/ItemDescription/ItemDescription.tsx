@@ -36,7 +36,7 @@ export function ItemDescription() {
     }
   },[ItemState.currentItem, ItemState.currentPrices])
   
-  // console.log(ItemState.currentItem);
+  console.log(ItemState.currentItem);
 
   return (
     <>
