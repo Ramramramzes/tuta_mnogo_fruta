@@ -1,0 +1,27 @@
+.block{
+  height: 7vh;
+  border: 1px solid var(--orange);
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  .plus,.minus{
+    width: 20%;
+    border: none;
+    font-weight: 500;
+    border-radius: 10px;
+    color: var(--orange);
+    transition: 200ms linear;
+    background-color: transparent;
+    &:hover{
+      transition: 200ms linear;
+      background-color: var(--orange);
+      color: white;
+    }
+  }
+  .quantity{
+    font-weight: bold;
+    color: var(--orange);
+  }
+}

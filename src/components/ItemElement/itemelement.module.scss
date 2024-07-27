@@ -6,4 +6,29 @@
     display: flex;
     justify-content: space-around;
   }
+  
+  .descriptionTitle{
+    font-weight: 600;
+  }
+  .descriptionBlock{
+    padding: 0% 6%;
+    margin-top: 2%;
+  }
+  .descriptionTitle{
+    font-weight: 600;
+    margin-bottom: .5%;
+  }
+  .description{
+    margin-bottom: 1%;
+  }
+  .srokTitle{
+    font-weight: 600;
+    margin-bottom: 3%;
+    display: inline-block;
+  }
+  .same{
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 2%;
+  }
 }

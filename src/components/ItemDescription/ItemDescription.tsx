@@ -52,7 +52,7 @@ export function ItemDescription() {
           <div className={styles.sizeBtnBlock}>
             {ItemState.currentPrices.map((el: ProductVariation, index: number) => (
               el.name !== 'удалитькласс' &&
-              <span className={styles.sizeBtn} key={index + el.name} onClick={() => sizeClickHandler(el.name)}>{el.name}</span>
+              <span className={styles.sizeBtn} key={index + el.name} onClick={() => sizeClickHandler(el.name)} style={curentItemData.name === el.name ? {borderColor:'var(--orange)'} : {}}><span>{el.name}</span></span>
             ))}
           </div>
 
@@ -63,7 +63,7 @@ export function ItemDescription() {
           </div>
           <div className={styles.counter}>
             <ItemCounter quantity={quantity} setQuantity={setQuantity} />
-            <button>В корзину</button>
+            <button className={styles.toBasket}>В корзину</button>
           </div>
 
           <h3 className={styles.consistTitle}>Состав:</h3>
