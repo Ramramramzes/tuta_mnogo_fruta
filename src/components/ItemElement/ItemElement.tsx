@@ -17,7 +17,7 @@ export function ItemElement() {
           <ItemDescription />
         </div>
         <h3>Описание:</h3>
-        {ItemState.currentItem && 
+        {ItemState.currentItem.description && 
           <>
           <p>{ItemState.currentItem.description.replace('<p>','').replace('</p>','')}</p>
           <p><span>Срок хранения:</span>{ItemState.currentItem.meta_data.filter((el:{id: number,key:string,value:string}) => el.key ==='srok')[0].value}</p>

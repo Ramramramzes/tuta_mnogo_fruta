@@ -10,66 +10,79 @@ interface ICurrentItemData {
   price: number;
 }
 
+interface MetaData {
+  id: number;
+  key: string;
+  value: string;
+}
+
 export function ItemDescription() {
-  //? ItemState.currentPrices - массив с вариативными ценниками 
-  //? ItemState.currentItem - текущий объект с данными бжу и тд
   const ItemState = useSelector((state: RootState) => state.item);
-  const [curentItemData,setCurentItemData] = useState<ICurrentItemData>({name:'', price: 0});
+  const [curentItemData, setCurentItemData] = useState<ICurrentItemData>({ name: '', price: 0 });
   const [quantity, setQuantity] = useState<number>(1);
-  const [bjuData,setBjuData] = useState<{id: number,name:string,value:string}[]>([]);
+  const [bjuData, setBjuData] = useState<MetaData[]>([]);
   
-  const sizeClickHandler = (name:string) => {
-    const needPrice = Number(ItemState.currentPrices.filter((el:ProductVariation) => el.name === name )[0].price);
-    setCurentItemData({name:name, price: needPrice});
+  const sizeClickHandler = (name: string) => {
+    const needPrice = Number(ItemState.currentPrices.filter((el: ProductVariation) => el.name === name)[0].price);
+    setCurentItemData({ name, price: needPrice });
     console.log(bjuData);
-    
   }
 
-  //* Установка нужного формата продукта
   useEffect(() => {
-    if(ItemState.currentItem.length != 0 && ItemState.currentPrices.length){
-      setBjuData(ItemState.currentItem.meta_data.filter((el:{id:number,key:string,value:string}) => el.key === 'belki' || el.key === 'zhiry' || el.key === 'uglevody' || el.key === 'kkal'))
-      ItemState.currentPrices[0].name != 'удалитькласс' ? 
-      setCurentItemData({name:ItemState.currentPrices[0].name,price: ItemState.currentPrices[0].price})
-      :
-      setCurentItemData({name:ItemState.currentPrices[1].name,price: ItemState.currentPrices[1].price});
+    if (ItemState.currentItem.length !== 0 && ItemState.currentPrices.length) {
+      const filteredBjuData = ItemState.currentItem.meta_data.filter((el: MetaData) => el.key === 'belki' || el.key === 'zhiry' || el.key === 'uglevody' || el.key === 'kkal');
+      setBjuData(filteredBjuData);
+
+      const initialPrice = ItemState.currentPrices[0].name !== 'удалитькласс'
+        ? ItemState.currentPrices[0]
+        : ItemState.currentPrices[1];
+
+      setCurentItemData({ name: initialPrice.name, price: initialPrice.price });
     }
-  },[ItemState.currentItem, ItemState.currentPrices])
-  
-  console.log(ItemState.currentItem);
+  }, [ItemState.currentItem, ItemState.currentPrices]);
 
   return (
     <>
-      {ItemState.currentItem.length != 0 && ItemState.currentPrices.length != 0 &&
+      {ItemState.currentItem.length !== 0 && ItemState.currentPrices.length !== 0 &&
         <div className={styles.itemDescription}>
-          <h2>{ItemState.currentItem.name}</h2>
-          <span>Размер:{
-            ItemState.currentPrices.map((el:ProductVariation,index:number) => {
-              return el.name != 'удалитькласс' ? 
-                <span key={index + el.name} onClick={() => sizeClickHandler(el.name)}>{el.name}</span>
-                :<></>
-            })
-          }</span>
+          <h2 className={styles.name}>{ItemState.currentItem.name}</h2>
+          <span className={styles.size}>{ItemState.currentItem.default_attributes[0].name}: <span>{curentItemData.name}</span>
+          </span>
 
-          <div>
-            <span>{curentItemData.name}</span>
+          <div className={styles.sizeBtnBlock}>
+            {ItemState.currentPrices.map((el: ProductVariation, index: number) => (
+              el.name !== 'удалитькласс' &&
+              <span className={styles.sizeBtn} key={index + el.name} onClick={() => sizeClickHandler(el.name)}>{el.name}</span>
+            ))}
           </div>
 
-          <div>
-            <span><span>{Math.round(curentItemData.price * 1.3)}₽</span> {curentItemData.price}₽</span>
+          <div className={styles.priceBlock}>
+            <span className={styles.price}>
+              <span className={styles.oldPrice}>{Math.round(curentItemData.price * 1.3)}₽</span> {curentItemData.price}₽
+            </span>
           </div>
-          <div>
+          <div className={styles.counter}>
             <ItemCounter quantity={quantity} setQuantity={setQuantity} />
             <button>В корзину</button>
           </div>
-          <h3>Состав:</h3>
-          <p>{ItemState.currentItem.meta_data.filter((el:{id:number,key:string,value:string}) => el.key === 'sostav')[0].value}</p>
-          
-          <span>Пищевая ценность на 100гр:</span>
-          <ul>
-            {bjuData.map(el => <li key={el.id} className={styles.bjuData}>{el.value}<span>гр</span></li>)}
-          </ul>
 
+          <h3 className={styles.consistTitle}>Состав:</h3>
+          <p className={styles.consistText}>{ItemState.currentItem.meta_data.find((el: MetaData) => el.key === 'sostav')?.value}</p>
+          
+          <span className={styles.bjuTitle}>Пищевая ценность на 100гр:</span>
+          <ul className={styles.bjuBlock}>
+            {bjuData.map((el: MetaData) => (
+              <li key={el.id}>
+                <span className={styles.bjuElement}>
+                  {el.key === 'belki' ? 'Белки' :
+                    el.key === 'zhiry' ? 'Жиры' :
+                    el.key === 'uglevody' ? 'Углеводы' :
+                    el.key === 'kkal' ? 'Ккал' : el.key}
+                </span>
+                {el.value}<span>гр</span>
+              </li>
+            ))}
+          </ul>
         </div>
       }
     </>
