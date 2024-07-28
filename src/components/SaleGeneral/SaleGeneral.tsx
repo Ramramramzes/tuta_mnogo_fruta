@@ -5,7 +5,7 @@ import { AppDispatch, RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 import { IProductWp } from '../../hooks/useWp';
 import { useDispatch } from 'react-redux';
-import { setItemId } from '../../store/item';
+import { setCurrentItem, setItemId } from '../../store/item';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -20,6 +20,7 @@ export function SaleGeneral() {
 
   const handleClick = (id: number) => {
     dispatch(setItemId(id));
+    dispatch(setCurrentItem(data));
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100)
