@@ -52,7 +52,7 @@ export const useWp = () => {
             el.categories.some(category => category.name === CatalogState.currentCatalog)
           );
 
-          setProducts(filteredProducts.slice(startIndex, endIndex));
+          setProducts(filteredProducts.slice(startIndex, endIndex).reverse());
           dispatch(setPagesLimit(Math.ceil(filteredProducts.length / 6)));
         } else {
           setProducts(allProducts.slice(startIndex, endIndex));
@@ -112,4 +112,5 @@ export interface IProductWp {
   name: string;
   price: string;
   slug: string;
+  featured: boolean;
 }

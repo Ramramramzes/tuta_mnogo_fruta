@@ -25,7 +25,6 @@ export function ItemDescription() {
   const sizeClickHandler = (name: string) => {
     const needPrice = Number(ItemState.currentPrices.filter((el: ProductVariation) => el.name === name)[0].price);
     setCurentItemData({ name, price: needPrice });
-    console.log(bjuData);
   }
 
   useEffect(() => {
@@ -67,7 +66,7 @@ export function ItemDescription() {
           </div>
 
           <h3 className={styles.consistTitle}>Состав:</h3>
-          <p className={styles.consistText}>{ItemState.currentItem.meta_data.find((el: MetaData) => el.key === 'sostav')?.value}</p>
+          <p className={styles.consistText}>{ItemState.currentItem.meta_data.find((el: MetaData) => el.key === 'sostav')?.value.replace(/<[^>]*>/g, '')}</p>
           
           <span className={styles.bjuTitle}>Пищевая ценность на 100гр:</span>
           <ul className={styles.bjuBlock}>

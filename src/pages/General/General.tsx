@@ -8,8 +8,12 @@ import { SaleGeneral } from '../../components/SaleGeneral';
 import { Subscribe } from '../../components/Subscribe';
 import { Footer } from '../../components/Footer';
 import { motion } from 'framer-motion';
-import { useWp } from '../../hooks/useWp';
+import { IProductWp, useWp } from '../../hooks/useWp';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 export function General() {
+  const CatalogState = useSelector((state: RootState) => state.catalog);
+  const bestSellers = CatalogState.allProducts.filter((el:IProductWp) => el.featured)
   useWp();
   
   return (
@@ -22,7 +26,7 @@ export function General() {
         <CarouselGeneral />
         <AditionalInfo />
         <h2 className='title'>Хиты продаж</h2>
-        <Bestsellers />
+        <Bestsellers products={bestSellers}/>
         <h2 className='title'>Наша пастила</h2>
         <OurProductGeneral />
         <h2 className='title'>Категории</h2>

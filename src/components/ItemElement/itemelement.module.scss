@@ -15,11 +15,14 @@
     margin-top: 2%;
   }
   .descriptionTitle{
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: .5%;
   }
   .description{
+    font-size: 18px;
     margin-bottom: 1%;
+    line-height: 1.5;
   }
   .srokTitle{
     font-weight: 600;
@@ -29,6 +32,9 @@
   .same{
     font-weight: 600;
     font-size: 22px;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
   }
+}
+.bestBlock{
+  margin-bottom: 3%;
 }

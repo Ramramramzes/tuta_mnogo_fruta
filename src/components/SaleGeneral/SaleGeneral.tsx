@@ -1,31 +1,53 @@
 import styles from './salegeneral.module.scss';
 import { Timer } from '../Timer';
 import { AddToBasketBtn } from '../AddToBasketBtn';
-import sellsData from '../../content/sells.json';
-import { ISells } from '../../content/ISells';
+import { AppDispatch, RootState } from '../../store/store';
+import { useSelector } from 'react-redux';
+import { IProductWp } from '../../hooks/useWp';
+import { useDispatch } from 'react-redux';
+import { setItemId } from '../../store/item';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 
 export function SaleGeneral() {
-  const data:ISells = sellsData;
+  const CatalogState = useSelector((state: RootState) => state.catalog);
+  const dispatch = useDispatch<AppDispatch>();
+  const [data,setData] = useState<IProductWp>();
+  useEffect(() => {
+    setData(CatalogState.allProducts.filter((el:IProductWp) => el.name === 'Апельсин')[0]);
+  }, [CatalogState.allProducts])
+
+  const handleClick = (id: number) => {
+    dispatch(setItemId(id));
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100)
+  }
 
   return (
-    <div className={styles.saleGeneral}>
-      <div className={styles.timerBlock}>
-        <h3 className={styles.sellsTitle}>Акционное <br/>предложени</h3>
-        <p className={styles.sellsText}>Скидки до 30% на все товары</p>
-        <Timer delay={12500000}/>
-      </div>
-      <div className={styles.cardBlock}>
-        <div className={styles.card}>
-          <img src={data.sells.images.main} alt={data.sells.name} className={styles.img}/>
-          <div className={styles.textContent}>
-            <h3 className={styles.title}>{data.sells.name}</h3>
-            <p className={styles.description}>{data.sells.description}</p>
-            <span className={styles.price}>от <span className={styles.priceLined}>{data.sells.price.less * 2}₽ </span>{data.sells.price.less}₽</span>
-            <AddToBasketBtn id={data.sells.id} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+    {data && <div className={styles.saleGeneral}>
+                    <div className={styles.timerBlock}>
+                      <h3 className={styles.sellsTitle}>Акционное <br/>предложени</h3>
+                      <p className={styles.sellsText}>Скидки до 30% на все товары</p>
+                      <Timer delay={12500000}/>
+                    </div>
+                    <div className={styles.cardBlock}>
+                      <div className={styles.card}>
+                        <img src={data.images[0].src} alt={data.name} className={styles.img}/>
+                        <div className={styles.textContent}>
+                          <h3 className={styles.title}>{data.name}</h3>
+                          <p className={styles.description}>{data.description.replace(/<[^>]*>/g, '')}</p>
+                          <span className={styles.price}>от <span className={styles.priceLined}>{Number(data.price) * 2}₽ </span>{Number(data.price)}₽</span>
+                          <Link to='/item' onClick={() => handleClick(data.id)}>
+                            <AddToBasketBtn />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    }
+    </>
   )
 }

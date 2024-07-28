@@ -1,63 +1,38 @@
 import styles from './bestsellers.module.scss';
-import data from '../../content/products.json'
 import { Link } from 'react-router-dom';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { AddToBasketBtn } from '../AddToBasketBtn';
+import { IProductWp } from '../../hooks/useWp';
+import { AppDispatch } from '../../store/store';
+import { setItemId } from '../../store/item';
+import { useDispatch } from 'react-redux';
 
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 4
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
 
-interface IProducts {
-  products: PastilaItem[];
-}
-
-interface PastilaItem {
-  name: string;
-  id: number;
-  catalog: string;
-  bestsellers: boolean;
-  type: string;
-  price: {
-    less: number;
-    more: number;
+export function Bestsellers({products,superLargeDesktop,desktop,tablet,mobile,height}:{products:IProductWp[],superLargeDesktop?:number,desktop?:number,tablet?:number,mobile?:number,height?:number}) {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: superLargeDesktop ? superLargeDesktop : 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: desktop ? desktop : 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: tablet ? tablet : 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: mobile ? mobile : 1,
+    }
   };
-  status: string;
-  images: {
-    main: string;
-    all: string[];
-  };
-  compound: string;
-  bju: {
-    b: number;
-    j: number;
-    u: number;
-    kkal: number;
-  };
-  description: string;
-  fresh: string;
-}
+  
+  const dispatch = useDispatch<AppDispatch>();
 
-export function Bestsellers() {
-  const products: IProducts = data;
-
-  const navClickHandler = () => {
+  const navClickHandler = (id:number) => {
+    dispatch(setItemId(id))
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
@@ -74,18 +49,16 @@ export function Bestsellers() {
         showDots={false}
         arrows={false}
         pauseOnHover={false}>
-        {products.products.map((el: PastilaItem, index: number) => {
+        {products.map((el:IProductWp, index: number) => {
           return (
-            el.bestsellers && (
-              <div key={`${el.images.main}_${index}`} className={styles.card}>
-                <Link className='link' to={'/catalog'} onClick={navClickHandler}>
-                  <img src={el.images.main} alt="main" className={styles.img} />
-                  <h4 className={styles.title}>{el.name}</h4>
-                  <span className={styles.price}>от <span className={styles.priceLined}>{el.price.less * 1.2}₽ </span>{el.price.less}₽</span>
-                </Link>
-                <AddToBasketBtn id={el.id} />
-              </div>
-            )
+            <div key={index} className={styles.card} style={height ? {height: `${height}vh`}: {}}>
+              <Link className={styles.content + ' link'} to={'/item'} onClick={() => navClickHandler(el.id)}>
+                <img src={el.images[0].src} alt="main" className={styles.img} />
+                <h4 className={styles.title}>{el.name}</h4>
+                <span className={styles.price}>от <span className={styles.priceLined}>{Number(el.price) * 1.2}₽ </span>{Number(el.price)}₽</span>
+                <AddToBasketBtn />
+              </Link>
+            </div>
           )
         })}
       </Carousel>
