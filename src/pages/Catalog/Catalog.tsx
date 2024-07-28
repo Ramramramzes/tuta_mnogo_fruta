@@ -18,7 +18,7 @@ export function Catalog() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }}
         className={styles.main} style={products.loading ? {height: '100vh'} : {}}>
-          <Sidebar />
+          <Sidebar loading={products.loading}/>
           {!products.loading ? <div className={styles.contentBlock}>
                                 <div className={styles.catalogItems}>
                                   {products && products.products.map((el) => {

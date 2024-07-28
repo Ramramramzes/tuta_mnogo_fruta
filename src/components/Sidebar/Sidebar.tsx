@@ -5,7 +5,7 @@ import { frips, kit, meat, pastila, presents } from '../../svg/catalogSvg';
 import { setCurrentCatalog, setPage } from '../../store/catalog';
 
 
-export function Sidebar() {
+export function Sidebar({loading}:{loading: boolean}) {
   const CatalogState = useSelector((state: RootState) => state.catalog);
   const dispatch = useDispatch<AppDispatch>();
 
@@ -17,36 +17,61 @@ export function Sidebar() {
     {
       name: 'Фрипсы',
       svg: frips(),
-      handler: () => (handleCategoryClick('Фрипсы'),dispatch(setPage(1))),
+      handler: () => {
+        if(!loading){
+          handleCategoryClick('Фрипсы')
+          dispatch(setPage(1))
+        }
+      },
     },
     {
       name: 'Пастила',
       svg: pastila(),
-      handler: () => (handleCategoryClick('Пастила'),dispatch(setPage(1))),
+      handler: () => {
+        if(!loading){
+          handleCategoryClick('Пастила')
+          dispatch(setPage(1))
+        }
+      },
     },
     {
       name: 'Мясо',
       svg: meat(),
-      handler: () => (handleCategoryClick('Мясо'),dispatch(setPage(1))),
+      handler: () => {
+        if(!loading){
+          handleCategoryClick('Мясо')
+          dispatch(setPage(1))
+        }
+      },
     },
     {
       name: 'Наборы',
       svg: kit(),
-      handler: () => (handleCategoryClick('Наборы'),dispatch(setPage(1))),
+      handler: () => {
+        if(!loading){
+          handleCategoryClick('Наборы')
+          dispatch(setPage(1))
+        }
+      },
     },
     {
       name: 'Подарки',
       svg: presents(),
-      handler: () => (handleCategoryClick('Подарки'),dispatch(setPage(1))),
+      handler: () => {
+        if(!loading){
+          handleCategoryClick('Подарки')
+          dispatch(setPage(1))
+        }
+      },
     },
   ];
 
   return (
     <div className={styles.sidebar}>
-      <ul className={styles.list}>
+      <ul className={styles.list} style={loading ? {filter: 'grayscale(1)'} : {}}>
         {CatalogMenu.map((el,index) =>{
           return (
-            <li  key={index} onClick={el.handler} className={styles.listItem} style={el.name === CatalogState.currentCatalog ? {
+            <li  key={index} onClick={el.handler} className={styles.listItem} style={el.name === CatalogState.currentCatalog && !loading ? {
               backgroundColor: 'var(--light)',
               padding:'5px 10px',
               borderRadius: '5px',
