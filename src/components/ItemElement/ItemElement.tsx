@@ -17,10 +17,9 @@ export function ItemElement() {
   useEffect(() => {
     if(ItemState.currentItem.categories){
       setSameProducts(CatalogState.allProducts.filter((el:IProductWp) => {
-                        return el.categories.some((category: any) => category.name === ItemState.currentItem.categories[0].name);
-                      }))
+        return el.categories.some((category: any) => category.name == ItemState.currentItem.categories[0].name);}))
     }
-  },[CatalogState.allProducts])
+  },[itemData.loading])
 
   return (
     <>

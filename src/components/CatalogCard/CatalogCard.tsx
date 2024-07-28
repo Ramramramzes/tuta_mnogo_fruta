@@ -4,12 +4,13 @@ import { IProductWp } from '../../hooks/useWp';
 import { Link } from 'react-router-dom';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
-import { setItemId } from '../../store/item';
+import { setCurrentItem, setItemId } from '../../store/item';
 
 export function CatalogCard({el}:{el:IProductWp}) {
   const dispatch = useDispatch<AppDispatch>();
   const itemNavHandler = () => {
     dispatch(setItemId(el.id))
+    dispatch(setCurrentItem(el))
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
