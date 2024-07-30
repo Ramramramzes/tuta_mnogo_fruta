@@ -1,0 +1,50 @@
+.formBlock{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  .formTitle{
+    display: block;
+    font-size: 20px;
+    font-family: 'Amavik',sans-serif;
+    color: var(--orange);
+    margin-bottom: 2%;
+  }
+  .form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 20px;
+    input, textarea{
+      border: 2px solid var(--orange);
+      border-radius: 10px;
+      padding: 2% 3%;
+      color: var(--gray);
+      &::placeholder{
+        color: var(--gray);
+        font-size: 14px;
+        opacity: .5;
+      }
+    }
+    .btnBlock{
+      .btn{
+        width: 50%;
+        font-family: 'Amavik',sans-serif;
+        color: white;
+        background-color: var(--orange);
+        border-radius: 100px;
+        border: 2px solid var(--orange);
+        transition: 200ms;
+        &:hover{
+          background-color: white;
+          color: var(--orange);
+          border-color: var(--orange);
+          transition: 200ms;
+        }
+      }
+    }
+  }
+}
