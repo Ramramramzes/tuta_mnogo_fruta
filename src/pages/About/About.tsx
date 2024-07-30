@@ -9,7 +9,7 @@ export function About() {
     <>
       <Header />
         <motion.div
-        initial={{ scale: .97, opacity: 0 }}
+        initial={{ scale: 1.03, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }} >
           <div className={styles.main}>
