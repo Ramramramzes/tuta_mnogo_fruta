@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export function ContactsContent() {
   return (
     <motion.div
-      initial={{ scale: 1.03 }}
+      initial={{ scale: 1.02 }}
       animate={{ scale: 1 }}
       transition={{ duration: 0.4 }}
       className={styles.main} 
