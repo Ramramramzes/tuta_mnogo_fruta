@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { LayoutBase } from '../../layout/LayoutBase';
 
 export function Basket() {
   const navigate = useNavigate()
@@ -6,8 +7,8 @@ export function Basket() {
     navigate(link)
   }
   return (
-    <>basket
-    <button onClick={() => navHandler('/')}>back</button>
-    </>
+    <LayoutBase>
+      <button onClick={() => navHandler('/')}>back</button>
+    </LayoutBase>
   );
 }

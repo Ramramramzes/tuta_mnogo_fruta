@@ -1,21 +1,19 @@
-.catalog{
-  .main{
-    border-top: 1px solid var(--orange);
-    background-color: var(--light);
-    display: flex;
-    .contentBlock{
-      width: 80%;
-      .catalogItems{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-      .pagination{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1% 0%;
-      }
+.main{
+  border-top: 1px solid var(--orange);
+  background-color: var(--light);
+  display: flex;
+  .contentBlock{
+    width: 80%;
+    .catalogItems{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .pagination{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1% 0%;
     }
   }
 }

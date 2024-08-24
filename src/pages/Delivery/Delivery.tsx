@@ -1,14 +1,11 @@
 import { DeliveryContent } from '../../components/DeliveryContent';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
+import { LayoutBase } from '../../layout/LayoutBase';
 
 export function Delivery() {
 
   return (
-    <>
-      <Header />
+    <LayoutBase>
       <DeliveryContent />
-      <Footer />
-    </>
+    </LayoutBase>
   );
 }

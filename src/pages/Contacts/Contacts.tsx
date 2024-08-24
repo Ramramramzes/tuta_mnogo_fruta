@@ -1,7 +1,6 @@
 // import { useNavigate } from 'react-router-dom';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
 import { ContactsContent } from '../../components/ContactsContent';
+import { LayoutBase } from '../../layout/LayoutBase';
 
 export function Contacts() {
   // const navigate = useNavigate()
@@ -9,10 +8,8 @@ export function Contacts() {
   //   navigate(link)
   // }
   return (
-    <>
-      <Header />
+    <LayoutBase>
       <ContactsContent />
-      <Footer />
-    </>
+    </LayoutBase>
   );
 }

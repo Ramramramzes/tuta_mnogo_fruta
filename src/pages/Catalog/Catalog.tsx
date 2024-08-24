@@ -1,18 +1,15 @@
 import styles from './catalog.module.scss'
-import { Footer } from '../../components/Footer';
-import { Header } from '../../components/Header';
 import { Sidebar } from '../../components/Sidebar';
 import { CatalogCard } from '../../components/CatalogCard';
 import { Paginate } from '../../components/Paginate';
 import { motion } from 'framer-motion';
 import { useWp } from '../../hooks/useWp';
+import { LayoutBase } from '../../layout/LayoutBase';
 
 export function Catalog() {
   const products = useWp();
   return (
-    <div
-    className={styles.catalog}>
-      <Header />
+    <LayoutBase>
       <motion.div
         initial={{ scale: 0.97, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -34,7 +31,6 @@ export function Catalog() {
                               :
                               <div className='loader-block'><span className='loader'></span></div>}
         </motion.div>
-      <Footer />
-    </div>
+    </LayoutBase>
   );
 }

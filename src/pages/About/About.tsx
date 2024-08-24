@@ -1,14 +1,12 @@
 import styles from './about.module.scss'
-import { Footer } from '../../components/Footer';
-import { Header } from '../../components/Header';
-import { HowWeWork } from '../../components/HowWeWork';
 import { motion } from 'framer-motion';
+import { LayoutBase } from '../../layout/LayoutBase';
+import { HowWeWork } from '../../components/HowWeWork';
 
 export function About() {
   return (
-    <>
-      <Header />
-        <motion.div
+    <LayoutBase>
+      <motion.div
         initial={{ scale: 1.03, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4 }} >
@@ -21,7 +19,6 @@ export function About() {
           </div>
           <HowWeWork />
         </motion.div>
-      <Footer />
-    </>
+    </LayoutBase>
   );
 }
