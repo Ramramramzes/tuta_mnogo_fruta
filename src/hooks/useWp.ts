@@ -58,10 +58,10 @@ export const useWp = () => {
           setProducts(allProducts.slice(startIndex, endIndex));
           dispatch(setPagesLimit(Math.ceil(allProducts.length / 6)));
         }
-
-        setLoading(false);
+        
       } catch (error: any) {
         setError(error.message || 'Something went wrong');
+      }finally{
         setLoading(false);
       }
     };

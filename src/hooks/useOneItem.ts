@@ -26,10 +26,11 @@ export const useOneItem = () => {
 
         const response = await axios.get(url, {auth: auth});
         setItem(response.data)
-        setLoading(false);
       }
       catch(error:any){
         setError(error);
+        setLoading(false);
+      }finally{
         setLoading(false);
       }
 
