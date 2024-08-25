@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ProductVariation } from "../hooks/useOneItem";
 
-interface IItem{
+export interface IItem{
   itemId: number;
   currentItem: ProductVariation | {};
   currentPrices: ProductVariation[] | [];

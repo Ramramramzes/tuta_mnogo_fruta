@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IProductWp } from "../hooks/useWp";
 
-interface ICatogInitial{
+export interface ICatogInitial{
   currentCatalog: string;
   page:number;
   pagesLimit:number;

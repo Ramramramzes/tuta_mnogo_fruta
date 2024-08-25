@@ -1,0 +1,17 @@
+.toBasket{
+      height: 7vh;
+      padding: 0% 5%;
+      width: fit-content;
+      font-weight: 600;
+      color: var(--orange);
+      background-color: transparent;
+      border: none;
+      border: 1px solid var(--orange);
+      border-radius: 10px;
+      transition: 200ms linear;
+      &:hover{
+        color: white;
+        background-color: var(--orange);
+        transition: 200ms linear;
+      }
+    }

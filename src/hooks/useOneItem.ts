@@ -14,7 +14,6 @@ export const useOneItem = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      
       try {
         const url = `https://tuta-mnogo-fruta.ru/wp-json/wc/v3/products/${ItemState.itemId}/variations`;
         const consumer_key = "ck_db1b37ff5e14c628dbaaadf3de6d27e76d0806aa";
@@ -82,6 +81,7 @@ export interface ProductVariation {
   date_on_sale_to: string | null;
   date_on_sale_to_gmt: string | null;
   description: string;
+  default_attributes: [{name: string }];
   dimensions: {
     length: string;
     width: string;
@@ -101,7 +101,7 @@ export interface ProductVariation {
   on_sale: boolean;
   parent_id: number;
   permalink: string;
-  price: string;
+  price: number;
   purchasable: boolean;
   regular_price: string;
   sale_price: string;
