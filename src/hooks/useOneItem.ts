@@ -67,6 +67,7 @@ interface Links {
 }
 
 export interface ProductVariation {
+  categories: any;
   _links: Links;
   attributes: Attribute[];
   backordered: boolean;

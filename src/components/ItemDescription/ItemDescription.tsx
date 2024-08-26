@@ -4,7 +4,6 @@ import { RootState } from '../../store/store';
 import { useEffect, useState } from 'react';
 import { ProductVariation } from '../../hooks/useOneItem';
 import { ItemCounter } from '../ItemCounter';
-import { AddToBasketBtn } from '../AddToBasketBtn';
 import { BasketBtn } from '../BasketBtn';
 // import { BasketBtn } from '../BasketBtn';
 
@@ -32,7 +31,7 @@ export function ItemDescription() {
   }
 
   useEffect(() => {
-    if (ItemState.currentItem && 'meta_data' in ItemState.currentItem) {
+    if (ItemState.currentItem) {
       const filteredBjuData = ItemState.currentItem.meta_data.filter((el: MetaData) => el.key === 'belki' || el.key === 'zhiry' || el.key === 'uglevody' || el.key === 'kkal');
       setBjuData(filteredBjuData);
 
@@ -46,7 +45,7 @@ export function ItemDescription() {
 
   return (
     <>
-  {ItemState.currentPrices.length !== 0 && 'name' in ItemState.currentItem && 'default_attributes' in ItemState.currentItem && (
+  {ItemState.currentPrices.length !== 0 &&  ItemState.currentItem && (
     <div className={styles.itemDescription}>
       <h2 className={styles.name}>{(ItemState.currentItem as ProductVariation).name}</h2>
       <span className={styles.size}>

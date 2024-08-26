@@ -12,11 +12,11 @@ export function ItemElement() {
   const itemData = useOneItem();
   const ItemState = useSelector((state: RootState) => state.item);
   const CatalogState = useSelector((state: RootState) => state.catalog);
-  const [sameProducts,setSameProducts] = useState([])
+  const [sameProducts, setSameProducts] = useState<IProductWp[]>([]);
 
   useEffect(() => {
     if(ItemState.currentItem.categories){
-      setSameProducts(CatalogState.allProducts.filter((el:IProductWp) => {
+      setSameProducts(CatalogState.allProducts && CatalogState.allProducts.filter((el:IProductWp) => {
         return el.categories.some((category: any) => category.name == ItemState.currentItem.categories[0].name);}))
     }
   },[itemData.loading])
