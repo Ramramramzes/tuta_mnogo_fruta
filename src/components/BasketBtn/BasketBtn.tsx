@@ -11,7 +11,6 @@ export function BasketBtn({size,price,quantity,name,id,}:IBasketItem) {
   const handleClick = () => {
     dispatch(addToBasket({name: name, quantity: quantity, id: id, size: size, price: price}))
     console.log(BasketState);
-    
   };
 
   return (
