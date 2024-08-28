@@ -94,6 +94,7 @@ export interface ProductVariation {
   downloads: any[];
   id: number;
   image: ImageOne;
+  images?: ImageOne[];
   low_stock_amount: number | null;
   manage_stock: boolean;
   menu_order: number;

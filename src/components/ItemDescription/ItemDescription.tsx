@@ -41,6 +41,7 @@ export function ItemDescription() {
 
       setCurentItemData({ name: initialPrice?.name, price: initialPrice?.price });
     }
+    
   }, [ItemState.currentItem, ItemState.currentPrices]);
 
   return (
@@ -75,13 +76,13 @@ export function ItemDescription() {
 
       <div className={styles.counter}>
         <ItemCounter quantity={quantity} setQuantity={setQuantity} />
-        {/* <button className={styles.toBasket}>В корзину</button> */}
         <BasketBtn 
         quantity={quantity}
         id={ItemState.currentItem.id}
         name={ItemState.currentItem.name}
         size={curentItemData.name}
         price={curentItemData.price}
+        img={ItemState.currentItem.images && ItemState.currentItem.images[0].src}
         />
       </div>
 

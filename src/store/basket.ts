@@ -6,6 +6,7 @@ export interface IBasketItem {
   quantity: number;
   name: string;
   id: number;
+  img?: string;
 }
 
 const initialState: IBasketItem[] = [];
@@ -15,7 +16,7 @@ const basketSlice = createSlice({
   initialState,
   reducers: {
     addToBasket: (state, action: PayloadAction<IBasketItem>) => {
-      const itemIndex = state.findIndex(item => item.id === action.payload.id);
+      const itemIndex = state.findIndex(item => item.size === action.payload.size && item.id === action.payload.id);
       if (itemIndex === -1) {
         state.push(action.payload);
       } else {
