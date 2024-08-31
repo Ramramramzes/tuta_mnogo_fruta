@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IProductWp } from "../hooks/useWp";
+import { IProductWp } from "../interfaces/product";
+
 
 export interface ICatogInitial{
   currentCatalog: string;

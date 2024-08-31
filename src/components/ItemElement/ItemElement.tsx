@@ -4,7 +4,7 @@ import { ItemDescription } from '../ItemDescription';
 import { ItemImage } from '../ItemImage';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { IProductWp } from '../../hooks/useWp';
+import { IProductWp } from '../../interfaces/product';
 import { useEffect, useState } from 'react';
 import { Bestsellers } from '../Bestsellers';
 
@@ -19,6 +19,8 @@ export function ItemElement() {
       setSameProducts(CatalogState.allProducts && CatalogState.allProducts.filter((el:IProductWp) => {
         return el.categories.some((category: any) => category.name == ItemState.currentItem.categories[0].name);}))
     }
+    console.log(ItemState.currentItem);
+    
   },[itemData.loading])
 
   return (

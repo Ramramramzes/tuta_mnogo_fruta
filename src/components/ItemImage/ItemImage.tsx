@@ -2,8 +2,8 @@ import styles from './itemimage.module.scss';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
-import { ImageOne, ProductVariation } from '../../hooks/useOneItem';
-import { IProductWp } from '../../hooks/useWp';
+import { ImageOne, ProductVariation } from '../../interfaces/variation';
+import { IProductWp } from '../../interfaces/product';
 import { setCurrentItem, setCurrentPrices } from '../../store/item';
 import { motion } from 'framer-motion';
 

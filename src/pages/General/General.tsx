@@ -6,10 +6,11 @@ import { CategoriesGeneral } from '../../components/CategoriesGeneral';
 import { SaleGeneral } from '../../components/SaleGeneral';
 import { Subscribe } from '../../components/Subscribe';
 import { motion } from 'framer-motion';
-import { IProductWp, useWp } from '../../hooks/useWp';
+import { useWp } from '../../hooks/useWp';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { LayoutBase } from '../../layout/LayoutBase';
+import { IProductWp } from '../../interfaces/product';
 export function General() {
   const CatalogState = useSelector((state: RootState) => state.catalog);
   const bestSellers = CatalogState.allProducts.filter((el:IProductWp) => el.featured)

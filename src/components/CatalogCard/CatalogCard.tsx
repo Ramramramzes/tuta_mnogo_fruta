@@ -1,10 +1,10 @@
 import styles from './catalogcard.module.scss';
 import { AddToBasketBtn } from '../AddToBasketBtn';
-import { IProductWp } from '../../hooks/useWp';
 import { Link } from 'react-router-dom';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { setCurrentItem, setItemId } from '../../store/item';
+import { IProductWp } from '../../interfaces/product';
 
 export function CatalogCard({el}:{el:IProductWp}) {
   const dispatch = useDispatch<AppDispatch>();

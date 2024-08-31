@@ -2,9 +2,9 @@ import styles from './itemdescription.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { useEffect, useState } from 'react';
-import { ProductVariation } from '../../hooks/useOneItem';
 import { ItemCounter } from '../ItemCounter';
 import { BasketBtn } from '../BasketBtn';
+import { ProductVariation } from '../../interfaces/variation';
 // import { BasketBtn } from '../BasketBtn';
 
 

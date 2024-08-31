@@ -3,7 +3,7 @@ import { Timer } from '../Timer';
 import { AddToBasketBtn } from '../AddToBasketBtn';
 import { AppDispatch, RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
-import { IProductWp } from '../../hooks/useWp';
+import { IProductWp } from '../../interfaces/product';
 import { useDispatch } from 'react-redux';
 import { setCurrentItem, setItemId } from '../../store/item';
 import { Link } from 'react-router-dom';

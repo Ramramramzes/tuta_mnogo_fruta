@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { AddToBasketBtn } from '../AddToBasketBtn';
-import { IProductWp } from '../../hooks/useWp';
+import { IProductWp } from '../../interfaces/product';
 import { AppDispatch } from '../../store/store';
 import { setItemId } from '../../store/item';
 import { useDispatch } from 'react-redux';
