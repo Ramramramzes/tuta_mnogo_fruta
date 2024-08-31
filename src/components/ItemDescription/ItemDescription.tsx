@@ -77,12 +77,9 @@ export function ItemDescription() {
       <div className={styles.counter}>
         <ItemCounter quantity={quantity} setQuantity={setQuantity} />
         <BasketBtn 
-        quantity={quantity}
         id={ItemState.currentItem.id}
-        name={ItemState.currentItem.name}
+        quantity={quantity}
         size={curentItemData.name}
-        price={curentItemData.price}
-        img={ItemState.currentItem.images && ItemState.currentItem.images[0].src}
         />
       </div>
 

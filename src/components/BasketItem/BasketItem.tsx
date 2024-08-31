@@ -7,7 +7,7 @@ export function BasketItem({el}:{el:IBasketItem}) {
   
   return (
     <div className={styles.itemCard}>
-      <img src={el.img} alt="товар" />
+      {/* <img src={el.img} alt="товар" />
       <div className={styles.itemContent}>
         <div className={styles.nameBlock}>
           <h3>{el.name}</h3>
@@ -17,7 +17,7 @@ export function BasketItem({el}:{el:IBasketItem}) {
           <span>{el.price * el.quantity}</span>
           <button>x</button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

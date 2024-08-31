@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import { LayoutBase } from '../../layout/LayoutBase';
 import { RootState } from '../../store/store';
 import { BasketItem } from '../../components/BasketItem';
+import { UseBasketList } from '../../hooks/useBasketList';
 
 export function Basket() {
   const BasketState = useSelector((state: RootState) => state.basket);
-  console.log(BasketState);
+  const { item, loading, error } = UseBasketList()
+  console.log(item,loading,error);
   
   return (
     <LayoutBase>

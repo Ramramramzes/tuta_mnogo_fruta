@@ -1,12 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IBasketItem {
-  size: string;
-  price: number;
-  quantity: number;
-  name: string;
   id: number;
-  img?: string;
+  quantity: number;
+  size: string;
 }
 
 const initialState: IBasketItem[] = [];

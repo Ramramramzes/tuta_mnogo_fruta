@@ -5,12 +5,12 @@ import { useDispatch } from 'react-redux';
 import { addToBasket, IBasketItem } from '../../store/basket';
 import { useEffect } from 'react';
 
-export function BasketBtn({size,price,quantity,name,id,img}:IBasketItem) {
+export function BasketBtn({size,quantity,id}:IBasketItem) {
   const BasketState = useSelector((state: RootState) => state.basket);
 
   const dispatch = useDispatch()
   const handleClick = () => {
-    dispatch(addToBasket({name: name, quantity: quantity, id: id, size: size, price: Number(price), img: img}))
+    dispatch(addToBasket({ id: id,quantity: quantity, size: size}))
   };
 
   useEffect(() => {
