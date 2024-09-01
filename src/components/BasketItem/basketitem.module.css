@@ -1,36 +1,56 @@
 .itemCard{
+  display: flex;
+  gap: 10px;
+  .link{
+    width: 17%;
+    .img{
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: 200ms linear;
+      &:hover{
+        border: 1px solid var(--orange);
+        transition: 200ms linear;
+      }
+    }
+  }
+  .itemContent{
+    width: 100%;
     display: flex;
-    height: 150px;
-    img{
-        border-radius: 10px;
-        margin-right: 1%;
+    justify-content: space-between;
+    .nameBlock,.priceBlock{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .categories,
+      .size{
+        font-weight: 400;
+        font-size: 18px;
+        opacity: .4;
+      }
+      .name{
+        font-size: 24px;
+      }
+      .price{
+        font-weight: 500;
+        font-size: 22px;
+      }
+      .btn{
+        text-align: right;
+        font-size: 10px;
+        opacity: .5;
+        color: red;
+        font-weight: 500;
+        transition: 200ms linear;
+        &:hover{
+          transition: 200ms linear;
+          scale: 1.1;
+          opacity: 1;
+        }
+      }
     }
-    .itemContent{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        .nameBlock{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            input{
-                width: 50px;
-                height: 50px;
-                border: 1px solid var(--orange);
-                padding: 5%;
-                border-radius: 10px;
-            }
-        }
-        .priceBlock{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        h3{
-            color: var(--default);
-            font-size: 22px;
-        }
+    .priceBlock{
+      text-align: right;
     }
+  }
 }

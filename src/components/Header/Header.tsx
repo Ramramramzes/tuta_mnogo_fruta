@@ -2,11 +2,9 @@ import styles from './header.module.scss';
 import { useNavigate } from 'react-router-dom';
 import content from '../../content/Genearal/static/header.json'
 import { setCurrentCatalog, setPage } from '../../store/catalog';
-import { AppDispatch, RootState } from '../../store/store';
+import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
-import { Badge } from 'react-bootstrap';
-import {basketSVG } from '../../svg/catalogSvg';
-import { useSelector } from 'react-redux';
+import { BasketCanvas } from '../BasketCanvas';
 
 export const menu = [
   { label: 'Каталог', href: '/catalog' },
@@ -19,8 +17,7 @@ export const menu = [
 export function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch<AppDispatch>();
-  const BasketState = useSelector((state: RootState) => state.basket);
-  
+
   const navHandler = (link: string) => {
     if(link === '/catalog'){
       dispatch(setCurrentCatalog(''));
@@ -43,10 +40,7 @@ export function Header() {
           );
         })}
       </ul>
-      <button className={styles.basketBtn} onClick={() => navHandler('/basket')}>
-        {basketSVG()}
-        {BasketState.length > 0 && <Badge className={styles.badge}>{BasketState.length}</Badge>}
-      </button>
+      <BasketCanvas />
     </div>
   );
 }
