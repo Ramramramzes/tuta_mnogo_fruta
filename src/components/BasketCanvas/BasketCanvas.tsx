@@ -64,9 +64,14 @@ export function BasketCanvas() {
           <div className={styles.basketList}>
             {!loading ? (
               finalBasket.length > 0 ?
-                finalBasket.map((el) => (
+              <>
+                {finalBasket.map((el) => (
                   <BasketItem key={el.id} el={el} handleClose={handleClose} />
                 ))
+                }
+                {/* Добавить стиль */}
+                <button>Оформить заказ</button>
+              </>
                 :
                 <p className={styles.empty}>Ваша корзина пуста :(</p>
               ) : (

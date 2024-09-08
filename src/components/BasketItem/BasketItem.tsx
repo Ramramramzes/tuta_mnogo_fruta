@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { setCurrentItem, setItemId } from '../../store/item';
+import { removeFromBasket } from '../../store/basket';
 
 export function BasketItem({el,handleClose}:{el:IFinalBasket,handleClose: () => void}) {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,6 +16,10 @@ export function BasketItem({el,handleClose}:{el:IFinalBasket,handleClose: () => 
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
+  }
+
+  const handleDel = (id?: number, size?: string) => {
+    dispatch(removeFromBasket({id:id,size:size}));
   }
   
     
@@ -31,7 +36,7 @@ export function BasketItem({el,handleClose}:{el:IFinalBasket,handleClose: () => 
         </div>
         <div className={styles.priceBlock}>
           {/* //! Добавить событие на удаление */}
-          <button className={styles.btn}>❌</button>
+          <button className={styles.btn} onClick={() => handleDel(el?.id,el?.size)}>❌</button>
           <span>{el.quantity} шт</span>
           <span className={styles.price}>{Number(el.price) * Number(el.quantity)} ₽</span>
         </div>

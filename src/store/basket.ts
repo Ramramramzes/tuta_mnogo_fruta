@@ -20,11 +20,8 @@ const basketSlice = createSlice({
         state[itemIndex].quantity = action.payload.quantity;
       }
     },
-    removeFromBasket: (state, action: PayloadAction<number>) => {
-      const itemIndex = state.findIndex(item => item.id === action.payload);
-      if (itemIndex !== -1) {
-        state.splice(itemIndex, 1);
-      }
+    removeFromBasket: (state, action) => {
+      return state.filter(item => !(item.size === action.payload.size && item.id === action.payload.id));
     },
   },
 });
