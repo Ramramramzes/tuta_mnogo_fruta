@@ -1,7 +1,7 @@
 import styles from './header.module.scss';
 import { useNavigate } from 'react-router-dom';
 import content from '../../content/Genearal/static/header.json'
-import { setCurrentCatalog, setPage } from '../../store/catalog';
+import { setCurrentCatalog, setCurrentTag, setPage } from '../../store/catalog';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { BasketCanvas } from '../BasketCanvas';
@@ -14,9 +14,15 @@ export const menu = [
   { label: 'Контакты', href: '/contacts' },
 ];
 
+
 export function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch<AppDispatch>();
+
+  const handleCategoryClick = (name:string,id:number) => {
+    dispatch(setCurrentCatalog(name));
+    dispatch(setCurrentTag(id));
+  };
 
   const navHandler = (link: string) => {
     if(link === '/catalog'){
@@ -24,7 +30,7 @@ export function Header() {
       dispatch(setPage(1));
     }
     if(link === '/presents'){
-      dispatch(setCurrentCatalog('Подарки'));
+      handleCategoryClick('Подарки',53)
       dispatch(setPage(1));
     }
     navigate(link)

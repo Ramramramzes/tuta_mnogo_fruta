@@ -2,15 +2,16 @@ import styles from './sidebar.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { frips, kit, meat, pastila, presents } from '../../svg/catalogSvg';
-import { setCurrentCatalog, setPage } from '../../store/catalog';
+import { setCurrentCatalog, setCurrentTag, setPage } from '../../store/catalog';
 
 
 export function Sidebar({loading}:{loading: boolean}) {
   const CatalogState = useSelector((state: RootState) => state.catalog);
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleCategoryClick = (name:string) => {
+  const handleCategoryClick = (name:string,id:number) => {
     dispatch(setCurrentCatalog(name));
+    dispatch(setCurrentTag(id));
   };
   
   const CatalogMenu = [
@@ -19,7 +20,7 @@ export function Sidebar({loading}:{loading: boolean}) {
       svg: frips(),
       handler: () => {
         if(!loading){
-          handleCategoryClick('Фрипсы')
+          handleCategoryClick('Фрипсы',25)
           dispatch(setPage(1))
         }
       },
@@ -29,7 +30,7 @@ export function Sidebar({loading}:{loading: boolean}) {
       svg: pastila(),
       handler: () => {
         if(!loading){
-          handleCategoryClick('Пастила')
+          handleCategoryClick('Пастила',28)
           dispatch(setPage(1))
         }
       },
@@ -39,7 +40,7 @@ export function Sidebar({loading}:{loading: boolean}) {
       svg: meat(),
       handler: () => {
         if(!loading){
-          handleCategoryClick('Мясо')
+          handleCategoryClick('Мясо',29)
           dispatch(setPage(1))
         }
       },
@@ -49,7 +50,7 @@ export function Sidebar({loading}:{loading: boolean}) {
       svg: kit(),
       handler: () => {
         if(!loading){
-          handleCategoryClick('Наборы')
+          handleCategoryClick('Наборы',48)
           dispatch(setPage(1))
         }
       },
@@ -59,7 +60,7 @@ export function Sidebar({loading}:{loading: boolean}) {
       svg: presents(),
       handler: () => {
         if(!loading){
-          handleCategoryClick('Подарки')
+          handleCategoryClick('Подарки',53)
           dispatch(setPage(1))
         }
       },

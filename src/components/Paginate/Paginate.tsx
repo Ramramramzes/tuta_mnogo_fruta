@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { setPage } from '../../store/catalog';
 
-export function Paginate() {
+export function Paginate({totalPages}: {totalPages: number}) {
   const dispatch = useDispatch<AppDispatch>();
   const CatalogState = useSelector((state: RootState) => state.catalog);
 
@@ -23,7 +23,7 @@ export function Paginate() {
       nextLabel={''}
       breakLabel={'...'}
       breakClassName={styles.break}
-      pageCount={CatalogState.pagesLimit}
+      pageCount={totalPages}
       marginPagesDisplayed={2}
       pageRangeDisplayed={3}
       onPageChange={handlePageClick}
