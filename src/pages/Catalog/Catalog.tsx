@@ -14,10 +14,10 @@ export function Catalog() {
   // const allCatalog = useWp();
   const CatalogState = useSelector((state: RootState) => state.catalog);
 
-  const { allCatalog, getAllCatalog, categoryCatalog, getCatalogCategory, totalPages , loading } = useCatalogApi();
+  const { getPageCatalog, pageCatalog, categoryCatalog, getCatalogCategory, totalPages , loading } = useCatalogApi();
 
   useEffect(() => {
-    CatalogState.currentCatalog === '' && getAllCatalog();
+    CatalogState.currentCatalog === '' && getPageCatalog(CatalogState.page);
     CatalogState.currentCatalog && CatalogState.tag !== null  && getCatalogCategory(CatalogState.tag,CatalogState.page);
   }, [CatalogState.page,CatalogState.currentCatalog]);
 
@@ -36,7 +36,7 @@ export function Catalog() {
             {CatalogState.currentCatalog === '' ?
               <div className={styles.contentBlock}>
                 <div className={styles.catalogItems}>
-                  {allCatalog && allCatalog.map((el) => {
+                  {pageCatalog && pageCatalog.map((el) => {
                     return (
                       <CatalogCard key={el.id} el={el} />
                     )
