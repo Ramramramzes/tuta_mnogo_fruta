@@ -43,22 +43,26 @@ a:visited{
   justify-content: center;
   align-items: center;
 }
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: animloader 1s linear infinite;
+
+.loader-block-full{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes animloader {
-  0% {
-    box-shadow: -72px 0 var(--orange) inset;
-  }
-  100% {
-    box-shadow: 48px 0 var(--orange) inset;
-  }
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
 }
-    
+@keyframes l5 {
+  0%  {box-shadow: 20px 0 var(--orange), -20px 0 rgba(252, 152, 15, 0.2); background: var(--orange); }
+  33% {box-shadow: 20px 0 var(--orange), -20px 0 rgba(252, 152, 15, 0.2); background: rgba(252, 152, 15, 0.2); }
+  66% {box-shadow: 20px 0 rgba(252, 152, 15, 0.2), -20px 0 var(--orange); background: rgba(252, 152, 15, 0.2); }
+  100% {box-shadow: 20px 0 rgba(252, 152, 15, 0.2), -20px 0 var(--orange); background: var(--orange); }
+}
+
 //? animation for loader -------------------------------->

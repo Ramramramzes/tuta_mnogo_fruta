@@ -19,8 +19,6 @@ export function ItemElement() {
       setSameProducts(CatalogState.allProducts && CatalogState.allProducts.filter((el:IProductWp) => {
         return el.categories.some((category: any) => category.name == ItemState.currentItem.categories[0].name);}))
     }
-    console.log(ItemState.currentItem);
-    
   },[itemData.loading])
 
   return (
@@ -50,7 +48,7 @@ export function ItemElement() {
         </div>
       </>
       :
-      <div className={styles.loaderBlock + ' loader-block'}><span className='loader'></span></div>}
+      <div className={'loader-block-full'}><span className='loader'></span></div>}
     </>
   );
 }
