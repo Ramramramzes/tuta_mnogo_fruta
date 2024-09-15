@@ -38,6 +38,23 @@
   }
 }
 
+
+@media (max-width: 450px) {
+  .caruselItem{
+    height: 30vh;
+    .carouselCaption{
+      .caruselTitle{
+        width: 100%;
+        font-size: 26px;
+      }
+      .caruselDescription{
+        font-size: 18px;
+        margin-bottom: 10%;
+      }
+    }
+  }
+}
+
 @keyframes grow {
 	0% {
 		transform: scale(1);

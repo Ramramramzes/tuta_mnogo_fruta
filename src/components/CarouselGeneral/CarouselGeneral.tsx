@@ -6,10 +6,14 @@ import { Link } from 'react-router-dom';
 import { setCurrentCatalog } from '../../store/catalog';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 export function CarouselGeneral() {
   const slides:IGeneralData = slidesData;
   const dispatch = useDispatch<AppDispatch>();
 
+  useEffect(() => {
+    console.log(slidesData);
+  },[slides])
   return (
     <>
       <Carousel indicators={false} pause={false}>
@@ -19,7 +23,9 @@ export function CarouselGeneral() {
               <img src={el.image} className={styles.img}/>
               <Carousel.Caption className={styles.carouselCaption} style={index === 0 ? {textAlign: 'left'} : index === 1 ? {textAlign: 'right',alignItems: 'right'} : {textAlign: 'center'}}>
                   <h3 className={styles.caruselTitle}>{el.title}</h3>
-                  <p className={styles.caruselDescription}>{el.description}</p>
+                  {slides.slider.map(slider => {
+                    return slider.description.length > 0 && slider.description === el.description && <p className={styles.caruselDescription}>{el.description}</p>
+                  })}
                   <div className={styles.btnBlock} style={index === 0 ? {justifyContent: 'left'} : index === 1 ? {justifyContent: 'right'} : {}}>
                     {index != 2 ? <Link className={'link ' + styles.btn} to={'/catalog'} onClick={() => dispatch(setCurrentCatalog(''))}>Подробнее</Link> : ''}
                   </div>
