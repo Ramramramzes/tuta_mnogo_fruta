@@ -1,10 +1,11 @@
 import styles from './header.module.scss';
 import { useNavigate } from 'react-router-dom';
-import content from '../../content/Genearal/static/header.json'
+import content from '../../content/Genearal/static/header.json';
 import { setCurrentCatalog, setCurrentTag, setPage } from '../../store/catalog';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { BasketCanvas } from '../BasketCanvas';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export const menu = [
   { label: 'Каталог', href: '/catalog' },
@@ -14,39 +15,45 @@ export const menu = [
   { label: 'Контакты', href: '/contacts' },
 ];
 
-
 export function Header() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleCategoryClick = (name:string,id:number) => {
+  const handleCategoryClick = (name: string, id: number) => {
     dispatch(setCurrentCatalog(name));
     dispatch(setCurrentTag(id));
   };
 
   const navHandler = (link: string) => {
-    if(link === '/catalog'){
+    if (link === '/catalog') {
       dispatch(setCurrentCatalog(''));
       dispatch(setPage(1));
     }
-    if(link === '/presents'){
-      handleCategoryClick('Подарки',53)
+    if (link === '/presents') {
+      handleCategoryClick('Подарки', 53);
       dispatch(setPage(1));
     }
-    navigate(link)
-  }
+    navigate(link);
+  };
 
   return (
-    <div className={styles.header}>
-      <img className={styles.logo} onClick={() => navigate('/')} src={content.logo} alt="" />
-      <ul className={styles.list}>
-        {menu.map((el) => {
-          return (
-            <li key={el.label} onClick={() => navHandler(el.href)}>{el.label}</li>
-          );
-        })}
-      </ul>
-      <BasketCanvas />
-    </div>
+    <Navbar expand="lg" className={styles.header}>
+      <Container className={styles.container}>
+        <Navbar.Brand className={styles.logo} onClick={() => navigate('/')}>
+          <img src={content.logo} alt="logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle className={styles.burger} aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse className={styles.collapse} id="basic-navbar-nav">
+          <Nav className={styles.list + ' me-auto'}>
+            {menu.map((el) => (
+              <Nav.Link className={styles.item} key={el.label} onClick={() => navHandler(el.href)}>
+                {el.label}
+              </Nav.Link>
+            ))}
+          </Nav>
+        </Navbar.Collapse>
+        <BasketCanvas />
+      </Container>
+    </Navbar>
   );
 }

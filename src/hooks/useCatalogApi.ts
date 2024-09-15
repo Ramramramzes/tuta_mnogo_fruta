@@ -57,7 +57,7 @@ export const useCatalogApi = () => {
   
         const response = await axios.get<IProductWp[]>(url, { auth });
         allProducts = [...allProducts, ...response.data];
-  
+        
         const totalPagesFromHeader = response.headers['x-wp-totalpages'];
         if (!totalPagesFromHeader || page >= Number(totalPagesFromHeader)) {
           break;

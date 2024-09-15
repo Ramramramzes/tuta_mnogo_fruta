@@ -1,4 +1,6 @@
-.basketBtn{
+.container{
+  flex: 1;
+  .basketBtn{
     border: none;
     background-color: transparent;
     position: relative;
@@ -27,3 +29,13 @@
       height: 40vh;
     }
   }
+}
+
+@media (max-width: 450px) {
+  .container{
+    display: flex;
+    justify-content: center;
+    flex: .2;
+    order: 1;
+  }
+}

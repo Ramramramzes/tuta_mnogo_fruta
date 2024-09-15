@@ -44,7 +44,7 @@ export function BasketCanvas() {
   }, [BasketState, item, loading]);
 
   return (
-    <>
+    <div className={styles.container}>
       <button className={styles.basketBtn} onClick={handleShow}>
         {basketSVG()}
         {BasketState.length > 0 && (
@@ -82,6 +82,6 @@ export function BasketCanvas() {
           </div>
         </Offcanvas.Body>
       </Offcanvas>
-    </>
+    </div>
   );
 }
