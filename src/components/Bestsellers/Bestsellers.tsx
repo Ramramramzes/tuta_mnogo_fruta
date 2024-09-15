@@ -20,12 +20,12 @@ export function Bestsellers({products,superLargeDesktop,desktop,tablet,mobile,he
       items: desktop ? desktop : 4,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 450 },
       items: tablet ? tablet : 3,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: mobile ? mobile : 1,
+      breakpoint: { max: 450, min: 0 },
+      items: mobile ? mobile : 2,
     }
   };
   
