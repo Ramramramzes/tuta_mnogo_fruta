@@ -12,3 +12,24 @@
 .ourProductImg{
   height: 55vh;
 }
+
+@media (max-width: 450px) {
+  .ourProduct{
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+  }
+  
+  .ourProductText{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: lighter;
+  }
+  
+  .ourProductImg{
+    height: 24vh;
+  }
+}
