@@ -18,3 +18,15 @@
     }
   }
 }
+
+@media (max-width: 450px) {
+  .aditionalinfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 10px;
+    .link{
+      width: 70%;
+    }
+  }
+}
