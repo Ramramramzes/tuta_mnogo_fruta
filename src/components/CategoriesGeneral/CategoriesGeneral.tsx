@@ -5,7 +5,6 @@ import { IGeneralData } from '../../content/Genearal/Igeneral';
 import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { setCurrentCatalog, setCurrentTag } from '../../store/catalog';
-import { useEffect } from 'react';
 
 const categoryData = [
     {
@@ -29,11 +28,6 @@ const categoryData = [
 export function CategoriesGeneral() {
   const dispatch = useDispatch<AppDispatch>();
   const data:IGeneralData = categoriesData;
-  
-  useEffect(() => {
-    console.log(categoriesData);
-  },[data])
-  
 
   const navClickHandler = (name:string,id:number) => {
     dispatch(setCurrentCatalog(name));
