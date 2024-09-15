@@ -9,14 +9,23 @@ import { setCurrentItem, setItemId } from '../../store/item';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-
 export function SaleGeneral() {
   const CatalogState = useSelector((state: RootState) => state.catalog);
   const dispatch = useDispatch<AppDispatch>();
   const [data,setData] = useState<IProductWp>();
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+
   useEffect(() => {
     setData(CatalogState.allProducts.filter((el:IProductWp) => el.name === 'Апельсин')[0]);
   }, [CatalogState.allProducts])
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleClick = (id: number) => {
     dispatch(setItemId(id));
@@ -39,7 +48,7 @@ export function SaleGeneral() {
                         <img src={data.images[0].src} alt={data.name} className={styles.img}/>
                         <div className={styles.textContent}>
                           <h3 className={styles.title}>{data.name}</h3>
-                          <p className={styles.description}>{data.description.replace(/<[^>]*>/g, '')}</p>
+                          <p className={styles.description}>{screenWidth < 500 ?data.description.replace(/<[^>]*>/g, '').slice(0,60) + '...' : data.description.replace(/<[^>]*>/g, '')}</p>
                           <span className={styles.price}>от <span className={styles.priceLined}>{Number(data.price) * 2}₽ </span>{Number(data.price)}₽</span>
                           <Link to='/item' onClick={() => handleClick(data.id)}>
                             <AddToBasketBtn />
