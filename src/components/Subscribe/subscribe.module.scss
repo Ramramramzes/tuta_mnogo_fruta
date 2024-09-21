@@ -91,6 +91,7 @@
 
 @media (max-width: 450px) {
   .subscribe{
+    height: 35vh;
     .plane_1{
       left: 12%;
       top: 16%;
@@ -110,8 +111,6 @@
       right: 14%;
       top: 80%;
     }
-  
-    height: 35vh;
     .content{
       .textContent{
         font-size: 24px;
