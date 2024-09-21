@@ -42,29 +42,29 @@
 
 @media (max-width: 450px) {
   .card{
-    width: 47%;
+    width: 80%;
     margin: 2% 0%;
     padding: 5% 3%;
-    height: 48vh;
+    height: 100%;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     .img{
       width: 95%;
       border-radius: 20px;
     }
     .text{
       .title{
-        font-size: 18px;
+        font-size: 20px;
         color: var(--gray);
       }
       .price{
         display: block;
         margin: 3% 0%;
-        font-size: 22px;
+        font-size: 26px;
         font-weight: 600;
         .priceLess{
           color: var(--gray);
-          font-size: 20px;
+          font-size: 22px;
           font-weight: 300;
           text-decoration: line-through;
         }
