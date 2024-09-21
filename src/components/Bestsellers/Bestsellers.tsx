@@ -25,7 +25,7 @@ export function Bestsellers({products,superLargeDesktop,desktop,tablet,mobile,he
     },
     mobile: {
       breakpoint: { max: 450, min: 0 },
-      items: mobile ? mobile : 2,
+      items: mobile ? mobile : 1,
     }
   };
   
