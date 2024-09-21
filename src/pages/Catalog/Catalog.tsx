@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 export function Catalog() {
-  // const allCatalog = useWp();
   const CatalogState = useSelector((state: RootState) => state.catalog);
 
   const { getPageCatalog, pageCatalog, categoryCatalog, getCatalogCategory, totalPages , loading } = useCatalogApi();
