@@ -1,4 +1,5 @@
 import styles from './header.module.scss';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import content from '../../content/Genearal/static/header.json';
 import { setCurrentCatalog, setCurrentTag, setPage } from '../../store/catalog';
@@ -18,6 +19,9 @@ export const menu = [
 export function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  
+  // Состояние для управления открытием/закрытием меню
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleCategoryClick = (name: string, id: number) => {
     dispatch(setCurrentCatalog(name));
@@ -34,6 +38,7 @@ export function Header() {
       dispatch(setPage(1));
     }
     navigate(link);
+    setMenuOpen(false); // Закрыть меню после перехода
   };
 
   return (
@@ -42,8 +47,16 @@ export function Header() {
         <Navbar.Brand className={styles.logo} onClick={() => navigate('/')}>
           <img src={content.logo} alt="logo" />
         </Navbar.Brand>
-        <Navbar.Toggle className={styles.burger} aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className={styles.collapse} id="basic-navbar-nav">
+        <Navbar.Toggle
+          className={styles.burger}
+          aria-controls="basic-navbar-nav"
+          onClick={() => setMenuOpen(!menuOpen)}
+        />
+        <Navbar.Collapse
+          className={styles.collapse}
+          id="basic-navbar-nav"
+          in={menuOpen} // Управляем видимостью меню
+        >
           <Nav className={styles.list + ' me-auto'}>
             {menu.map((el) => (
               <Nav.Link className={styles.item} key={el.label} onClick={() => navHandler(el.href)}>
