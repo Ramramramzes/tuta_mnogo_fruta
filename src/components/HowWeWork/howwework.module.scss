@@ -56,8 +56,10 @@
     .tabsContent{
       flex-direction: column;
       gap: 10px;
+      width: 100%;
       .img{
-        width: fit-content !important;
+        width: 60% !important;
+        height: 100% !important;
       }
       .text{
         width: 95%;
