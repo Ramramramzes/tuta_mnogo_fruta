@@ -25,10 +25,13 @@ export function ItemDescription() {
   const [quantity, setQuantity] = useState<number>(1);
   const [bjuData, setBjuData] = useState<MetaData[]>([]);
   
-  const sizeClickHandler = (name: string) => {
-    const needPrice = Number(ItemState.currentPrices.filter((el: ProductVariation) => el.name === name)[0].price);
+const sizeClickHandler = (name: string) => {
+  const needPrice = Number(ItemState.currentPrices.filter((el: ProductVariation) => el.name === name)[0].price);
+  if (curentItemData.name !== name || curentItemData.price !== needPrice) {
     setCurentItemData({ name, price: needPrice });
+    setQuantity(1);
   }
+};
 
   useEffect(() => {
     if (ItemState.currentItem) {
