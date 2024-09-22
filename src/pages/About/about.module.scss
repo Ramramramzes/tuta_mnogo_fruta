@@ -43,3 +43,20 @@
     background-size: 140%;
   }
 }
+
+@media (max-width: 450px) {
+  .main{
+    background-image:none;
+    .logo{
+      width: 80%;
+    }
+    .text_l,
+    .text_m,
+    .text_s{
+      width: 95%;
+    }
+    .certificate{
+      width: 85%;
+    }
+  }
+}
