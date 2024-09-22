@@ -13,6 +13,7 @@ export function ItemElement() {
   const ItemState = useSelector((state: RootState) => state.item);
   const CatalogState = useSelector((state: RootState) => state.catalog);
   const [sameProducts, setSameProducts] = useState<IProductWp[]>([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     if(ItemState.currentItem.categories){
@@ -20,6 +21,18 @@ export function ItemElement() {
         return el.categories.some((category: any) => category.name == ItemState.currentItem.categories[0].name);}))
     }
   },[itemData.loading])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -44,7 +57,7 @@ export function ItemElement() {
           </>}
         </div>
         <div className={styles.bestBlock}>
-          <Bestsellers products={sameProducts} desktop={4} height={70} />
+          <Bestsellers products={sameProducts} desktop={4} height={windowWidth > 450 ? 70 : 60} />
         </div>
       </>
       :
