@@ -12,10 +12,23 @@ export function BasketCanvas() {
   const BasketState = useSelector((state: RootState) => state.basket);
   const [finalBasket, setFinalBasket] = useState<IFinalBasket[]>([]);
   const { item, loading } = UseBasketList();
-
   const [show, setShow] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const updatedBasket: IFinalBasket[] = [];
@@ -55,7 +68,7 @@ export function BasketCanvas() {
         show={show}
         onHide={handleClose}
         placement={'end'}
-        style={{ width: '40%' }}
+        style={windowWidth > 450 ? { width: '40%' } : { width: '100%' }}
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Корзина</Offcanvas.Title>
@@ -70,7 +83,7 @@ export function BasketCanvas() {
                 ))
                 }
                 {/* Добавить стиль */}
-                <button>Оформить заказ</button>
+                <button style={{marginTop: '5%'}}>Оформить заказ</button>
               </>
                 :
                 <p className={styles.empty}>Ваша корзина пуста :(</p>

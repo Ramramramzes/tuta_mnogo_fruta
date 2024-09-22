@@ -20,7 +20,6 @@ export function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   
-  // Состояние для управления открытием/закрытием меню
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleCategoryClick = (name: string, id: number) => {
@@ -38,7 +37,7 @@ export function Header() {
       dispatch(setPage(1));
     }
     navigate(link);
-    setMenuOpen(false); // Закрыть меню после перехода
+    setMenuOpen(false);
   };
 
   return (
@@ -55,7 +54,7 @@ export function Header() {
         <Navbar.Collapse
           className={styles.collapse}
           id="basic-navbar-nav"
-          in={menuOpen} // Управляем видимостью меню
+          in={menuOpen}
         >
           <Nav className={styles.list + ' me-auto'}>
             {menu.map((el) => (

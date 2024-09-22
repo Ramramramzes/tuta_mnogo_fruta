@@ -54,3 +54,50 @@
     }
   }
 }
+
+@media (max-width: 450px) {
+  .itemCard{
+    .link{
+      width: 37%;
+    }
+    .itemContent{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .nameBlock,.priceBlock{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .categories,
+        .size{
+          font-weight: 400;
+          font-size: 18px;
+          opacity: .4;
+        }
+        .name{
+          font-size: 24px;
+        }
+        .price{
+          font-weight: 500;
+          font-size: 22px;
+        }
+        .btn{
+          text-align: right;
+          font-size: 10px;
+          opacity: .5;
+          color: red;
+          font-weight: 500;
+          transition: 200ms linear;
+          &:hover{
+            transition: 200ms linear;
+            scale: 1.1;
+            opacity: 1;
+          }
+        }
+      }
+      .priceBlock{
+        text-align: right;
+      }
+    }
+  }
+}

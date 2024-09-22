@@ -34,8 +34,7 @@ export function BasketItem({el,handleClose}:{el:IFinalBasket,handleClose: () => 
           <h3 className={styles.name}>{el.name}</h3>
           <span className={styles.size}>Размер {el.size}</span>
         </div>
-        <div className={styles.priceBlock}>
-          {/* //! Добавить событие на удаление */}
+        <div className={styles.priceBlock}> 
           <button className={styles.btn} onClick={() => handleDel(el?.id,el?.size)}>❌</button>
           <span>{el.quantity} шт</span>
           <span className={styles.price}>{Number(el.price) * Number(el.quantity)} ₽</span>
