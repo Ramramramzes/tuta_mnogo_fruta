@@ -4,7 +4,8 @@ import './index.scss'
 import './reset.css'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import store from './store/store.ts'
+import store, { persistor } from './store/store.ts'
+import { PersistGate } from 'redux-persist/integration/react';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { General } from './pages/General/General.tsx'
 import { Catalog } from './pages/Catalog/Catalog.tsx';
@@ -29,8 +30,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+    <PersistGate loading={null} persistor={persistor}>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </PersistGate>
   </Provider>
 )
