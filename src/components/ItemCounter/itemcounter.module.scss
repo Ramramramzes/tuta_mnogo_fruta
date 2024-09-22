@@ -1,12 +1,13 @@
 .block{
   height: 7vh;
   border: 1px solid var(--orange);
-  width: 35%;
+  width: 45%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-radius: 10px;
   .plus,.minus{
+    text-align: center;
     width: 20%;
     border: none;
     font-weight: 500;
