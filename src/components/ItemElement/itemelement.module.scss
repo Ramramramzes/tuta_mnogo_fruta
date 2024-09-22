@@ -38,3 +38,19 @@
 .bestBlock{
   margin-bottom: 3%;
 }
+
+@media (max-width: 450px) {
+  .pageContent{
+    .mainPart{
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 30px;
+      height: 100%;
+      margin-bottom: 5%;
+    }
+    .descriptionBlock{
+      padding: 0%;
+
+    }
+  }
+}

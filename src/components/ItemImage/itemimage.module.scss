@@ -61,3 +61,20 @@
 }
 
 
+
+@media (max-width: 450px) {
+  .main {
+    width: 100%;
+  }
+  
+  .preview{
+    display: flex;
+    justify-content: space-between;
+    .previewHover{
+      width: 70px;
+      height: 70px;
+    }
+  }
+  
+  
+}
