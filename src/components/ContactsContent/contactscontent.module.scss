@@ -70,3 +70,47 @@
     }
   }
 }
+
+@media (max-width:450px) {
+  @mixin contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .main{
+    .whiteBack{
+      .title{
+        font-size: 26px;
+        margin-bottom: 5%;
+      }
+      .coorpContent{
+        flex-direction: column;
+        font-size: 18px;
+        gap: 20px;
+        .left{
+          text-align: center;
+          @include contacts()
+        }
+        .right{
+          text-align: center;
+          @include contacts()
+        }
+      }
+      .btnsBlock{
+        flex-direction: column;
+        gap: 10px;
+        button{
+          justify-content: center;
+          padding: 3% 0%;
+        }
+      }
+      .divider{
+        margin-top: 5%;
+        margin-bottom: 10%;
+        img{
+          width: 15%;
+        }
+      }
+    }
+  }
+}

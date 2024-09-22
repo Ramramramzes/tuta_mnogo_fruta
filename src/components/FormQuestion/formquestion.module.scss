@@ -48,3 +48,16 @@
     }
   }
 }
+
+@media (max-width:450px) {
+  .formBlock{
+    .form{
+      width: 100%;
+      .btnBlock{
+        .btn{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

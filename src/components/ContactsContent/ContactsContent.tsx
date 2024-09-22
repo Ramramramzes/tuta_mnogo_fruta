@@ -1,6 +1,6 @@
+import styles from './contactscontent.module.scss';
 import { inst_w, tg_w, whats_w } from '../../svg/catalogSvg';
 import { FormQuestion } from '../FormQuestion';
-import styles from './contactscontent.module.scss';
 import { motion } from 'framer-motion';
 
 export function ContactsContent() {
