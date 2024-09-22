@@ -8,6 +8,16 @@ import { RootState } from '../../store/store';
 import { UseBasketList } from '../../hooks/useBasketList';
 import { BasketItem } from '../BasketItem';
 
+const btnStyle = {
+  color: 'white',
+  padding: '10px 20px',
+  borderRadius: '10px',
+  backgroundColor: 'var(--orange)',
+  border: 'none',
+  cursor: 'pointer',
+  marginTop: '5%',
+}
+
 export function BasketCanvas() {
   const BasketState = useSelector((state: RootState) => state.basket);
   const [finalBasket, setFinalBasket] = useState<IFinalBasket[]>([]);
@@ -83,7 +93,7 @@ export function BasketCanvas() {
                 ))
                 }
                 {/* Добавить стиль */}
-                <button style={{marginTop: '5%'}}>Оформить заказ</button>
+                <button style={btnStyle}>Оформить заказ</button>
               </>
                 :
                 <p className={styles.empty}>Ваша корзина пуста :(</p>
