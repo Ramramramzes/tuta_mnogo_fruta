@@ -19,7 +19,7 @@ export function ItemElement() {
       setSameProducts(CatalogState.allProducts && CatalogState.allProducts.filter((el:IProductWp) => {
         return el.categories.some((category: any) => category.name == ItemState.currentItem.categories[0].name);}))
     }
-  },[itemData.loading])
+  },[itemData.loading,ItemState])
 
   return (
     <>
