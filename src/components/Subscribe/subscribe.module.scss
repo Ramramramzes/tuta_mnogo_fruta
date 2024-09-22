@@ -94,26 +94,30 @@
     height: 35vh;
     .plane_1{
       left: 12%;
-      top: 16%;
+      top: 10%;
     }
   
     .mail_1{
       left: 14%;
-      top: 80%;
+      top: 85%;
     }
   
     .plane_2{
       right: 12%;
-      top: 16%;
+      top: 10%;
     }
   
     .mail_2{
       right: 14%;
-      top: 80%;
+      top: 85%;
     }
     .content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       .textContent{
         font-size: 24px;
+        width: 80%;
       }
     }
   }

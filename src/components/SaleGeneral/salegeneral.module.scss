@@ -101,11 +101,15 @@
       width: 95%;
       height: 30vh;
       .card{  
+        display: flex;
+        justify-content: space-between;
         .img{
           height: 20vh;
+          margin: 0px;
         }
         .textContent{
           height: 20vh;
+          width: 55%;
           .title{
             font-size: 16px;
             color: var(--orange);
